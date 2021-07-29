@@ -4,7 +4,7 @@ public class shortcutCommands {
 
     public static void main(String[] args) {
 
-        System.out.println(" ---------- ---------- ---------- ---------- ---------- ");
+        System.out.println("---------- ---------- ---------- ---------- ----------");
         System.out.println();
 
         System.out.println("[_ Shortcut Commands - IntelliJ _]");
@@ -38,7 +38,7 @@ public class shortcutCommands {
         System.out.println("Ctrl+Shift+F    ---> Find");
 
         System.out.println();
-        System.out.println(" ---------- ---------- ---------- ---------- ---------- ");
+        System.out.println("---------- ---------- ---------- ---------- ----------");
         System.out.println();
 
         System.out.println("[_ Shortcut Commands - Eclipse _]");
@@ -61,7 +61,7 @@ public class shortcutCommands {
         System.out.println("	        	---> Goto implementation");
 
         System.out.println();
-        System.out.println("---------- ---------- ---------- ---------- ---------- ");
+        System.out.println("---------- ---------- ---------- ---------- ----------");
 
         
 

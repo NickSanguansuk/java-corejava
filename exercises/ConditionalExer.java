@@ -3,7 +3,7 @@ package exercises;
 import java.util.Scanner;
 
 public class ConditionalExer {
-    // Core Java - Exercise - Control Flow (Conditional) Statements
+    // Core Java - Exercises - Control Flow (Conditional) Statements
 
     static void problem1() {
         System.out.println("Problem 1: ");
@@ -111,16 +111,16 @@ public class ConditionalExer {
     public static void main(String[] args) {
 
         problem1();
-        System.out.println(" ---------- ");
+        System.out.println("----------");
         problem2();
-        System.out.println(" ---------- ");
+        System.out.println("----------");
         problem3();
-        System.out.println(" ---------- ");
+        System.out.println("----------");
         problem4();
-        System.out.println(" ---------- ");
+        System.out.println("----------");
         problem5();
-        System.out.println(" ---------- ");
+        System.out.println("----------");
         problem6();
-        System.out.println(" ---------- ");
+        System.out.println("----------");
     }
 }
