@@ -1,6 +1,8 @@
 package topics;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class ArraysDemo {
@@ -16,22 +18,90 @@ public class ArraysDemo {
 
         System.out.println("Length of Array is: " + strArray.length);
 
-        System.out.print("Enter words (separate by space): ");
+        //System.out.print("Enter words (separate by space): ");
+        //for (int i = 0; i < strArray.length; i++) {
+        //    //strArray[i] = scanner.next();
+        //
+        //    //System.out.println("i: " + i);
+        //
+        //    if (scanner.hasNext()) {
+        //        strArray[i] = scanner.next();
+        //        //strArray[i] = scanner.nextLine();
+        //    } else {
+        //        System.out.println("hasNext() return false");
+        //        break;
+        //    }
+        //}
+
+        System.out.print("Enter words (separate by space, / for exit): ");
         for (int i = 0; i < strArray.length; i++) {
-            //strArray[i] = scanner.next();
-
-            //System.out.println("i: " + i);
-
-            if (scanner.hasNext()) {
-                strArray[i] = scanner.next();
-                //strArray[i] = scanner.nextLine();
+            String tmp = scanner.next();
+            if (!(tmp.equals("/"))) {
+                strArray[i] = tmp;
             } else {
-                System.out.println("hasNext() return false");
                 break;
             }
         }
 
         System.out.println(Arrays.toString(strArray));
+    }
+
+    static void testScanner01() {
+        // This code is not working, if using "System.in"
+
+        Scanner scanner = new Scanner("Hello World!");
+        //Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Delimiter: " + scanner.delimiter());
+
+        //System.out.print("Enter words (separate by space): ");
+
+        while (scanner.hasNext()) {
+            System.out.println(scanner.next());
+        }
+
+        scanner.close();
+    }
+
+    static void testScanner02() {
+        // This code is not working as intended
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter numbers (separate by space): ");
+        List<Integer> list = new ArrayList<>();
+
+        // This loop will break, if the input isn't a number
+        // The program is not working as intended
+        while (scanner.hasNextInt()) {
+            list.add(scanner.nextInt());
+        }
+
+        Integer[] arr = list.toArray(new Integer[list.size()]);
+
+        for (int i : arr) {
+            System.out.print(i + ", ");
+        }
+        System.out.println();
+
+        scanner.close();
+    }
+
+    static void testScanner03() {
+        // This code is working, but it isn't use ".hasNext()"
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter words (separate by space): ");
+
+        String[] strArr = scanner.nextLine().split(" ");
+
+        for (String s : strArr) {
+            System.out.print(s + ", ");
+        }
+        System.out.println();
+
+        scanner.close();
     }
 
     public static void main(String[] args) {
@@ -93,6 +163,18 @@ public class ArraysDemo {
             //return getClass().getName() + "@" + Integer.toHexString(hashCode());
             System.out.println(arrayOne.getClass());
             System.out.println(arrayOne.getClass().getName());
+            // [ is one dimensional array ([, [[, [[[)
+            // I is int, [I is int array
+
+            // Z ---> boolean
+            // C ---> char
+            // L<classname> ---> class or interface
+            // D ---> double
+            // F ---> float
+            // I ---> int
+            // J ---> long
+            // S ---> short
+
             System.out.println(Integer.toHexString(arrayOne.hashCode()));
             System.out.println(arrayOne.getClass().getName() + "@" + Integer.toHexString(arrayOne.hashCode()));
 
@@ -193,6 +275,12 @@ public class ArraysDemo {
         {
             System.out.println("Using Scanner to initialize an array");
             //initializeArrayByInput();
+            System.out.println("----------");
+            //testScanner01();
+            System.out.println("----------");
+            //testScanner02();
+            System.out.println("----------");
+            testScanner03();
         }
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
