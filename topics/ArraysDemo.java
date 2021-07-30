@@ -9,6 +9,11 @@ public class ArraysDemo {
     // Core Java - Arrays
     // Core Java - Array Processing Algorithms
 
+    static int findIndex(int[] arr, int num) {
+        int index = Arrays.binarySearch(arr, num);
+        return  (index < 0) ? -1 : index;
+    }
+
     static void initializeArrayByInput() {
         Scanner scanner = new Scanner(System.in);
 
@@ -105,6 +110,122 @@ public class ArraysDemo {
     }
 
     public static void main(String[] args) {
+
+        {
+            // Playing with the main method signature
+            // The args parameter is an array of String
+            System.out.println("main(String[] args)");
+            System.out.println("args.length: " + args.length);
+            for (int i = 0; i < args.length; i++) {
+                System.out.println(args[i]);
+            }
+        }
+
+        System.out.println("---------- ---------- ---------- ---------- ----------");
+
+        {
+            // An array is a data structure that represents an indexed collection of values, all of the same data type.
+
+            // The array is a data structure, which stores a fixed-size sequential collection of elements of the same type.
+            // An array is used to store a collection of data or
+            // An array is a collection of similar type of elements which has contiguous memory location.
+
+            // The direct superclass of an array type is Object.
+            // Since arrays are Objects in Java, we can find their length method
+
+		    // All arrays are reference types, no matter their element type.
+			// arrays is allocated on the heap memory
+
+            System.out.println("Array");
+
+            // Declaring array
+            int[] b = new int[10]; // Declaration, instantiation and initialization (not initialization), this is recommended
+            int a[] = new int[10]; // (Not recommended)
+
+            byte[] byteArray = new byte[10];
+            short[] shortArray = new short[10];
+            long[] longArray = new long[10];
+            float[] floatArray = new float[10];
+            char[] charArray = new char[10];
+            String[] strArray = new String[10];
+            Object[] objArray = new Object[10];
+
+            // When an array is created, its elements are assigned a default value depending on the element data type:
+
+            // 0, 0L, 0.0f, 0.0d        ---> numeric primitive data types
+            // 'u000' (Unicode)          ---> char
+            // false                    ---> boolean
+            // null                     ---> reference types (including String or any object)
+
+            // Initializing
+            b[0] = 100;
+            System.out.println("Value at 0 index --> " + b[0]);
+            b[1] = 123;
+            System.out.println("Value at 1 index --> " + b[1]);
+
+            b[2] = b[0] + b[1];
+            System.out.println("Value at 2 index --> " + b[2]);
+
+            b[b.length - 1] = 999;  // last index
+            System.out.println("Value at the last index --> " + b[b.length - 1]);
+
+            System.out.println(Arrays.toString(b));
+
+            System.out.println("----------");
+
+            // Declare and initialize Array in one step
+            int[] c = {10, 2, 3, 4 + 5, 5 + 6, 2, 4, 5, 4, 5, 4, 100};
+            System.out.println(c[0] + "," + c[1] + "," + c[2] + "," + c[3] + "," + c[4] + ",...");
+
+            System.out.println(Arrays.toString(c));
+
+            System.out.println("The length of Array c is :" + c.length);
+
+            System.out.println("----------");
+
+            // Iterating over an Array using for loop
+            for (int i = 0; i < c.length; i++) {
+                System.out.print(c[i] + ", ");
+                //System.out.println("Element at index " + i + ": " + c[i]);
+                //			System.out.println(c[2]);
+                //			System.out.println(c[3]);
+                //			System.out.println(c[4]);
+                //			System.out.println(c[5]);
+            }
+            System.out.println();
+
+            // Iterating over an Array using for each loop
+            //Arrays.sort(c);
+            for (int i : c) {
+                //System.out.println("Element at index " + findIndex(c, i) + ": " + i);
+                System.out.print(i + ", ");
+            }
+            System.out.println();
+
+            // Print an Array using Arrays.toString()
+            // Arrays class: additional class in java, which support to Array in java
+            //System.out.println("Arrays class");
+            System.out.println(Arrays.toString(c));
+
+            System.out.println("----------");
+
+            String[] st = {"Perscholas", "non profit Organization", "programming courses", "TekSystem"};
+            System.out.println(Arrays.toString(st));
+
+
+            // Assign values or elements to array using loop
+            int[] values = new int[5];
+            for (int i = 0; i < values.length; i++) {
+                values[i] = i * 100;
+                // 0, 100, 200, 300
+                //System.out.println(values[i]);
+                System.out.print(values[i] + ", ");
+            }
+            System.out.println();
+
+        }
+
+        System.out.println("---------- ---------- ---------- ---------- ----------");
 
         {
             System.out.println("Copying Arrays (Deep copy and Shallow copy)");
@@ -251,6 +372,7 @@ public class ArraysDemo {
                     {0, 2, 42, -4, 5}
             };
 
+            // Copy 2D arrays using .arraycopy()
             int[][] destination = new int[source.length][];
             for (int i = 0; i < source.length; ++i) {
                 // Allocating space for each row of destination array
@@ -258,8 +380,19 @@ public class ArraysDemo {
                 System.arraycopy(source[i], 0, destination[i], 0, destination[i].length);
             }
 
+            // Copy 2D arrays using nested loop
+            int[][] destination2 = new int[source.length][];
+            for (int i = 0; i < source.length; ++i) {
+                // Allocating space for each row of destination array
+                destination2[i] = new int[source[i].length];
+                for (int j = 0; j < source[i].length; ++j) {
+                    destination2[i][j] = source[i][j];
+                }
+            }
+
             System.out.println(Arrays.deepToString(source));
             System.out.println(Arrays.deepToString(destination));
+            System.out.println(Arrays.deepToString(destination2));
 
             System.out.println("----------");
 
@@ -268,6 +401,16 @@ public class ArraysDemo {
 
             System.out.println(Arrays.deepToString(source));
             System.out.println(Arrays.deepToString(destination));
+
+            System.out.println("----------");
+
+            for (int i = 0; i < source.length; i++) {
+                for (int j = 0; j < source[i].length; j++) {
+
+                    System.out.print(source[i][j] + ", ");
+                }
+                System.out.println();
+            }
         }
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
@@ -280,7 +423,7 @@ public class ArraysDemo {
             System.out.println("----------");
             //testScanner02();
             System.out.println("----------");
-            testScanner03();
+            //testScanner03();
         }
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
@@ -335,14 +478,14 @@ public class ArraysDemo {
         {
             System.out.println("Sort an int array");
 
-            int[] inArray1 = { 4, 0, 1, 2, 3, 7, 6, 8, 9, 5 };
+            int[] inArray1 = {4, 0, 1, 2, 3, 7, 6, 8, 9, 5};
             Arrays.sort(inArray1);
             System.out.println(Arrays.toString(inArray1));
 
             System.out.println("----------");
 
             System.out.println("Sort an int array (manual)");
-            int[] inArray2 = { 4, 0, 1, 2, 3, 7, 6, 8, 9, 5 };
+            int[] inArray2 = {4, 0, 1, 2, 3, 7, 6, 8, 9, 5};
             for (int i = 0; i < inArray2.length - 1; i++) {
                 int num = inArray2[i];
                 for (int j = i + 1; j < inArray2.length; j++) {
