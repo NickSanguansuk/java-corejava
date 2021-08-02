@@ -1,6 +1,6 @@
 package exercises;
 
-public class Basics02 {
+public class BasicsExer02 {
     // Core Java - Exercises - Operators and Numbers
 
     public static void main(String[] args) {
