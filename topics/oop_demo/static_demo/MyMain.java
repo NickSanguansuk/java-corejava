@@ -46,10 +46,15 @@ public class MyMain {
         StaticDemo.addingNumber(100, 200);
 
         System.out.println("----------");
-        System.out.println("Testing");
+        System.out.println("Testing01");
 
         MyMain myMain = new MyMain();
         System.out.println(StaticDemo.var1 + myMain.number);
+
+        System.out.println("----------");
+        System.out.println("abstract class with only static method");
+
+        Announcement.announce();
 
         System.out.println("----------");
 
