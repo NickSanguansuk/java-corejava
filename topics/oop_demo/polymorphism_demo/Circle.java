@@ -12,4 +12,13 @@ public class Circle extends Shape {
         super.area = Math.PI * Math.pow(this.radius, 2);
     }
 
+    @Override
+    public String toString() {
+        //return "Circle{" +
+        //        "radius=" + radius +
+        //        ", area=" + area +
+        //        '}';
+        return "Circle: area:" + super.area + ", radius:" + this.radius;
+
+    }
 }

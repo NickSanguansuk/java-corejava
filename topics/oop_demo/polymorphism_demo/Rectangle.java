@@ -13,4 +13,14 @@ public class Rectangle extends Shape {
     public void calculateArea() {
         super.area = this.width * this.height;
     }
+
+    @Override
+    public String toString() {
+        //return "Rectangle{" +
+        //        "width=" + width +
+        //        ", height=" + height +
+        //        ", area=" + area +
+        //        '}';
+        return "Rectangle: area:" + super.area + ", width:" + this.width + ", height:" + this.height;
+    }
 }
