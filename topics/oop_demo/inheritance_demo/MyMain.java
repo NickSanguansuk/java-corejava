@@ -4,17 +4,37 @@ public class MyMain {
 
     public static void main(String[] args) {
 
-        Human h = new Human(34, 5.9f, 205.0f, "Wasin", "Rice", true, 123-45-6789, "English", "Java Developer");
+        Human human1 = new Human(34, 5.9f, 205.0f, "Wasin", "Rice", true, 123-45-6789, "English", "Java Developer");
 
-        Animal a = new Animal(5, 1.4f, 12.5f, "Pepsi", "Dog food", true, "Dog", "Blue");
+        Animal animal1 = new Animal(5, 1.4f, 12.5f, "Pepsi", "Dog food", true, "Dog", "Blue");
 
-        System.out.println("----------");
-
-        h.printWhoIAm();
+        LivingThing living1 = new Animal(6, 1.2f, 15.8f, "Kola", "Cat food", true, "Cat", "Yellow");
 
         System.out.println("----------");
 
-        a.printWhoIAm();
+        human1.printWhoIAm();
+        human1.saySomething();
+
+        System.out.println("----------");
+
+        animal1.printWhoIAm();
+        animal1.saySomething();
+
+        System.out.println("----------");
+
+        living1.printWhoIAm();
+        living1.saySomething();
+
+        System.out.println("----------");
+
+        System.out.println(human1 instanceof Human);
+        System.out.println(human1 instanceof LivingThing);
+        System.out.println(human1 instanceof Thing);
+        System.out.println(human1 instanceof Object);
+
+        System.out.println("----------");
+
+
 
     }
 }

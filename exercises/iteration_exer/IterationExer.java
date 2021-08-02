@@ -1,4 +1,4 @@
-package exercises;
+package exercises.iteration_exer;
 
 public class IterationExer {
     // Core Java - Exercises - Iteration Statements (Loops)
