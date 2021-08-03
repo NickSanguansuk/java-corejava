@@ -1,6 +1,6 @@
-package exercises.banking_exer;
+package exercises.banking_exer.main;
 
-public class Runner {
+public class Main {
 
     public static void main(String[] args) {
 
