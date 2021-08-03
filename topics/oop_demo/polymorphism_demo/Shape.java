@@ -1,9 +1,12 @@
 package topics.oop_demo.polymorphism_demo;
 
 public abstract class Shape {
-    //protected double area;
+    // data
     private double area;
 
+    // constructors
+
+    // getters and setters
     public double getArea() {
         return area;
     }
@@ -12,9 +15,7 @@ public abstract class Shape {
         this.area = area;
     }
 
-    //public void calculateArea() {
-    //    //this.area = 0.0;
-    //}
+    // abstract methods
     public abstract void calculateArea();
 
     public void printArea() {
