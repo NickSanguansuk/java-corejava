@@ -10,5 +10,10 @@ public class Manager extends Employee {
     }
 
     // Methods
+    @Override
+    public void calculateTransportAllowance() {
+        double transportAllowance = 15.0 / 100.0 * this.basicSalary;
+        System.out.println("Transport Allowance (15%): " + String.format("%.2f", transportAllowance));
+    }
 
 }

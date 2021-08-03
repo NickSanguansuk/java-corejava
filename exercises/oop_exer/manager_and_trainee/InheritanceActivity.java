@@ -18,7 +18,8 @@ public class InheritanceActivity {
 
         System.out.println("Problem Statement 2");
 
-
+        manager.calculateTransportAllowance();
+        trainee.calculateTransportAllowance();
 
     }
 }
