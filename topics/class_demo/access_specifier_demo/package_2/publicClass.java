@@ -1,9 +1,10 @@
-package topics.class_demo.package_2;
+package topics.class_demo.access_specifier_demo.package_2;
 
 // Class can be default or public
 public class publicClass {
     // Data
-    private int num; // class-level variable
+    // class-level variable (fields)
+    private int num;
     private String str;
     private double value;
 

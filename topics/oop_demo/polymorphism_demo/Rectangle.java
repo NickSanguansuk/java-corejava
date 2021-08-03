@@ -9,9 +9,25 @@ public class Rectangle extends Shape {
         this.height = height;
     }
 
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
     @Override
     public void calculateArea() {
-        super.area = this.width * this.height;
+        super.setArea(this.width * this.height);
     }
 
     @Override
@@ -21,6 +37,6 @@ public class Rectangle extends Shape {
         //        ", height=" + height +
         //        ", area=" + area +
         //        '}';
-        return "Rectangle: area:" + String.format("%.1f", super.area) + ", width:" + this.width + ", height:" + this.height;
+        return "Rectangle: area:" + String.format("%.1f", super.getArea()) + ", width:" + this.width + ", height:" + this.height;
     }
 }

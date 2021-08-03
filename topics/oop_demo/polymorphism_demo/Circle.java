@@ -9,7 +9,7 @@ public class Circle extends Shape {
 
     @Override
     public void calculateArea() {
-        super.area = Math.PI * Math.pow(this.radius, 2);
+        super.setArea(Math.PI * Math.pow(this.radius, 2));
     }
 
     @Override
@@ -18,7 +18,7 @@ public class Circle extends Shape {
         //        "radius=" + radius +
         //        ", area=" + area +
         //        '}';
-        return "Circle: area:" + String.format("%.1f", super.area) + ", radius:" + this.radius;
+        return "Circle: area:" + String.format("%.1f", super.getArea()) + ", radius:" + this.radius;
 
     }
 }

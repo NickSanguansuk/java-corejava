@@ -1,6 +1,6 @@
-package topics.class_demo.package_1;
+package topics.class_demo.access_specifier_demo.package_1;
 
-import topics.class_demo.package_2.publicClass;
+import topics.class_demo.access_specifier_demo.package_2.publicClass;
 //import topics.class_demo.package_2.ClassTwo;
 
 public class MyMain {

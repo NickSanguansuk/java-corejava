@@ -11,7 +11,7 @@ public class Triangle extends Shape {
 
     @Override
     public void calculateArea() {
-        super.area = 0.5 * this.base * this.height;
+        super.setArea(0.5 * this.base * this.height);
     }
 
     @Override
@@ -21,6 +21,6 @@ public class Triangle extends Shape {
         //        ", base=" + base +
         //        ", height=" + height +
         //        '}';
-        return "Rectangle: area:" + String.format("%.1f", super.area) + ", base:" + this.base + ", height:" + this.height;
+        return "Triangle: area:" + String.format("%.1f", super.getArea()) + ", base:" + this.base + ", height:" + this.height;
     }
 }

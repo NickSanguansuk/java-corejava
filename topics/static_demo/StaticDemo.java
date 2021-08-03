@@ -1,4 +1,4 @@
-package topics.oop_demo.static_demo;
+package topics.static_demo;
 
 public class StaticDemo {
     static int var1 = 20;
