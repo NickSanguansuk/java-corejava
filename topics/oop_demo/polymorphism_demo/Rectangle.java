@@ -21,6 +21,6 @@ public class Rectangle extends Shape {
         //        ", height=" + height +
         //        ", area=" + area +
         //        '}';
-        return "Rectangle: area:" + super.area + ", width:" + this.width + ", height:" + this.height;
+        return "Rectangle: area:" + String.format("%.1f", super.area) + ", width:" + this.width + ", height:" + this.height;
     }
 }

@@ -18,7 +18,7 @@ public class Circle extends Shape {
         //        "radius=" + radius +
         //        ", area=" + area +
         //        '}';
-        return "Circle: area:" + super.area + ", radius:" + this.radius;
+        return "Circle: area:" + String.format("%.1f", super.area) + ", radius:" + this.radius;
 
     }
 }

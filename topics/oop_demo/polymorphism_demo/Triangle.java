@@ -21,6 +21,6 @@ public class Triangle extends Shape {
         //        ", base=" + base +
         //        ", height=" + height +
         //        '}';
-        return "Rectangle: area:" + super.area + ", base:" + this.base + ", height:" + this.height;
+        return "Rectangle: area:" + String.format("%.1f", super.area) + ", base:" + this.base + ", height:" + this.height;
     }
 }

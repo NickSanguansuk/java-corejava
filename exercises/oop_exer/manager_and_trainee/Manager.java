@@ -4,7 +4,7 @@ public class Manager extends Employee {
     // Data
 
     // Constructors
-    public Manager(long id, String name, String address, String phone, double salary) {
+    public Manager(long id, String name, String address, long phone, double salary) {
         super(id, name, address, phone);
         super.basicSalary = salary;
     }

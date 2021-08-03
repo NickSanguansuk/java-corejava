@@ -4,11 +4,11 @@ public class Shape {
     protected double area;
 
     public void calculateArea() {
-        this.area = 0.0;
+        //this.area = 0.0;
     }
 
     public void printArea() {
-        System.out.println(this.area);
+        System.out.println(String.format("%.1f", this.area));
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Shape {
         //return "Shape{" +
         //        "area=" + area +
         //        '}';
-        return "Shape: area:" + this.area;
+        return "Shape: area:" + String.format("%.1f", this.area);
     }
 }

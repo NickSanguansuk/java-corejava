@@ -4,7 +4,7 @@ public class Trainee extends Employee {
     // Data
 
     // Constructors
-    public Trainee(long id, String name, String address, String phone, double salary) {
+    public Trainee(long id, String name, String address, long phone, double salary) {
         super(id, name, address, phone);
         super.basicSalary = salary;
     }

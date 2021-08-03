@@ -5,13 +5,13 @@ public class Employee {
     protected long employeeId;
     protected String employeeName;
     protected String employeeAddress;
-    protected String employeePhone;
+    protected long employeePhone;
     protected double basicSalary;
     protected double specialAllowance = 250.80;
     protected double hra = 1000.50;
 
     // Constructors
-    public Employee(long employeeId, String employeeName, String employeeAddress, String employeePhone) {
+    public Employee(long employeeId, String employeeName, String employeeAddress, long employeePhone) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.employeeAddress = employeeAddress;
@@ -20,9 +20,12 @@ public class Employee {
 
     // Methods
     public void calculateSalary() {
-        double salary = this.basicSalary + (basicSalary * specialAllowance / 100) + (basicSalary * hra / 100);
-        System.out.println(salary);
+        double salary = this.basicSalary + (basicSalary * specialAllowance / 100.0) + (basicSalary * hra / 100.0);
+        System.out.println(String.format("%.2f", salary));
     }
 
+    public void calculateTransportAllowance() {
+
+    }
 
 }

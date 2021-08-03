@@ -14,6 +14,18 @@ public class MyMain {
         rectangle.printArea();
         triangle.printArea();
 
+        System.out.println("Put all Shapes in an array, and use for each loop");
+
+        Shape[] shapeArray = new Shape[4];
+        shapeArray[0] = shape;
+        shapeArray[1] = circle;
+        shapeArray[2] = rectangle;
+        shapeArray[3] = triangle;
+
+        for (Shape s : shapeArray) {
+            s.printArea();
+        }
+
         System.out.println("----------");
 
         shape.calculateArea();
