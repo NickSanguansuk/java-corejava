@@ -1,18 +1,19 @@
-package topics.generics_demo;
+package topics.generics_demo.demo1;
 
-public class GenericsClass<T> {
+public class GenericsBoundType<T extends Integer> {
+
     private T varName;
 
-    public GenericsClass(T varName) {
+    public GenericsBoundType(T varName) {
         this.varName = varName;
     }
 
-    public GenericsClass() {
+    public GenericsBoundType() {
 
     }
 
     public T getVarName() {
-        return this.varName;
+        return varName;
     }
 
     public void setVarName(T varName) {

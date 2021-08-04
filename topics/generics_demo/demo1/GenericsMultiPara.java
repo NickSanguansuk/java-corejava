@@ -1,4 +1,4 @@
-package topics.generics_demo;
+package topics.generics_demo.demo1;
 
 public class GenericsMultiPara<T, S> {
 

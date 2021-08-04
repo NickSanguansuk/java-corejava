@@ -1,4 +1,4 @@
-package topics.generics_demo;
+package topics.generics_demo.demo1;
 
 public class Runner {
 
@@ -6,7 +6,7 @@ public class Runner {
 
         System.out.println("---> generics methods");
 
-        GenericsDemoClass generics = new GenericsDemoClass();
+        GenericsDemo generics = new GenericsDemo();
 
         generics.printValue(4.0);
         generics.printValue(4.0f);
@@ -20,8 +20,8 @@ public class Runner {
 
         System.out.println("----------");
 
-        GenericsDemoClass.staticPrintValue(4.0);
-        GenericsDemoClass.staticPrintValue("static");
+        GenericsDemo.staticPrintValue(4.0);
+        GenericsDemo.staticPrintValue("static");
 
         System.out.println("----------");
         System.out.println("---> generics classes");
