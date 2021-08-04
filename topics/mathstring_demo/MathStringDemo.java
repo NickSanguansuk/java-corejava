@@ -1,4 +1,4 @@
-package topics;
+package topics.mathstring_demo;
 
 public class MathStringDemo {
 }
