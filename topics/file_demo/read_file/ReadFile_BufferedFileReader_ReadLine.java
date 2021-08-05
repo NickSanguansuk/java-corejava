@@ -1,7 +1,6 @@
-package session5.testing.read_file;
+package topics.file_demo.read_file;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -9,10 +8,11 @@ public class ReadFile_BufferedFileReader_ReadLine {
     public static void main(String[] args) throws IOException {
         System.out.println("javaVersion=" + System.getProperty("java.version"));
 
-        //String fileName = "c:\\temp\\2.sample-10KB.txt";
+        String fileName = "src\\topics\\file_demo\\read_file\\Wasin.txt";
 
-        String fileName = new File("").getAbsolutePath();
-        fileName = fileName + "\\src\\session5\\testing\\read_file\\Wasin.txt";
+        System.out.println("----------");
+        System.out.println("BufferedReader, BufferedWriter ---> buffered character streams");
+        System.out.println("----------");
 
         FileReader fileReader = new FileReader(fileName);
 
@@ -28,5 +28,7 @@ public class ReadFile_BufferedFileReader_ReadLine {
             long elapsedTime = stopTime - startTime;
             System.out.println("elapsedTime=" + elapsedTime);
         }
+
+        System.out.println("----------");
     }
 }

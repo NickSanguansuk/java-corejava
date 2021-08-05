@@ -47,6 +47,7 @@ public class ReadFileFromDirectory {
                 // Write to file
                 data = str.getBytes();
                 fOut.write(data);
+                fOut.write('\n');
 
                 Scanner scanner = new Scanner(file);
 
@@ -58,7 +59,8 @@ public class ReadFileFromDirectory {
                     data = str.getBytes();
                     fOut.write(data);
                     //fOut.write(10); // same
-                    fOut.write(0x0a); // same
+                    //fOut.write(0x0a); // same
+                    fOut.write('\n');
                 }
 
             } catch (IOException e) {

@@ -1,4 +1,4 @@
-package session5.testing.read_file;
+package topics.file_demo.read_file;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -10,10 +10,11 @@ public class ReadFile_BufferedInputStream_Read {
     public static void main(String[] pArgs) throws FileNotFoundException, IOException {
         System.out.println("javaVersion=" + System.getProperty("java.version"));
 
-        //String fileName = "c:\\temp\\2.sample-10KB.txt";
+        String fileName = "src\\topics\\file_demo\\read_file\\Wasin.txt";
 
-        String fileName = new File("").getAbsolutePath();
-        fileName = fileName + "\\src\\session5\\testing\\read_file\\Wasin.txt";
+        System.out.println("----------");
+        System.out.println("BufferedInputStream, BufferedOutputStream ---> buffered byte streams");
+        System.out.println("----------");
 
         File file = new File(fileName);
         FileInputStream fileInputStream = new FileInputStream(file);
@@ -32,5 +33,7 @@ public class ReadFile_BufferedInputStream_Read {
             long elapsedTime = stopTime - startTime;
             System.out.println("elapsedTime=" + elapsedTime);
         }
+
+        System.out.println("----------");
     }
 }

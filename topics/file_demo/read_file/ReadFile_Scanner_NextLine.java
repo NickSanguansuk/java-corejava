@@ -1,4 +1,4 @@
-package session5.testing.read_file;
+package topics.file_demo.read_file;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,10 +8,11 @@ public class ReadFile_Scanner_NextLine {
     public static void main(String[] pArgs) throws FileNotFoundException {
         System.out.println("javaVersion=" + System.getProperty("java.version"));
 
-        //String fileName = "c:\\temp\\2.sample-10KB.txt";
+        String fileName = "src\\topics\\file_demo\\read_file\\Wasin.txt";
 
-        String fileName = new File("").getAbsolutePath();
-        fileName = fileName + "\\src\\session5\\testing\\read_file\\Wasin.txt";
+        System.out.println("----------");
+        System.out.println("");
+        System.out.println("----------");
 
         File file = new File(fileName);
 
@@ -27,5 +28,7 @@ public class ReadFile_Scanner_NextLine {
             long elapsedTime = stopTime - startTime;
             System.out.println("elapsedTime=" + elapsedTime);
         }
+
+        System.out.println("----------");
     }
 }

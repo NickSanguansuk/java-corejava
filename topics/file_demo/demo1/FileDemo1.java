@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class FileDemo1 {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) /*throws FileNotFoundException*/ {
 
         // The path separator for this system
         String pathSep = System.getProperty("path.separator");
@@ -21,10 +21,33 @@ public class FileDemo1 {
 
         System.out.println("----------");
 
+        // 1
+        String currentPath1 = null;
+        try {
+            //currentPath1 = new File(".").getCanonicalPath();
+            currentPath1 = new File("").getCanonicalPath();
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        System.out.println("Current path 1:" + currentPath1);
+
+        // 2 (I like this one)
+        String currentPath2 = new File("").getAbsolutePath();
+        System.out.println("Current path 2:" + currentPath2);
+
+        // 3
+        String currentPath3 = System.getProperty("user.dir");
+        System.out.println("Current path using System:" + currentPath3);
+
+        System.out.println("----------");
+        System.out.println("Relative path");
 
         //String fileName = "D:\\intellij-workspace\\corejava\\src\\topics\\file_demo\\demo1\\dataFile1.txt";
         String fileName = "src\\topics\\file_demo\\demo1\\dataFile1.txt";
         //String fileName = "src\\topics\\file_demo\\demo1\\dataFile2.txt";
+
+        System.out.println(fileName);
+
         File file = new File(fileName);
 
         System.out.println("----------");
@@ -56,7 +79,12 @@ public class FileDemo1 {
 
         System.out.println("----------");
 
-        Scanner scanner = new Scanner(file);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        }
 
         //String readLineByLine = scanner.nextLine();
         //System.out.println(readLineByLine); // Only first line
