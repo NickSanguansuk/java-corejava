@@ -42,8 +42,8 @@ public class FileDemo1 {
         System.out.println("----------");
         System.out.println("Relative path");
 
-        //String fileName = "D:\\intellij-workspace\\corejava\\src\\topics\\file_demo\\demo1\\dataFile1.txt";
-        String fileName = "src\\topics\\file_demo\\demo1\\dataFile1.txt";
+        //String fileName = "D:\\intellij-workspace\\corejava\\src\\topics\\file_demo\\demo1\\dataFile_1.txt";
+        String fileName = "src\\topics\\file_demo\\demo1\\dataFile_1.txt";
         //String fileName = "src\\topics\\file_demo\\demo1\\dataFile2.txt";
 
         System.out.println(fileName);
