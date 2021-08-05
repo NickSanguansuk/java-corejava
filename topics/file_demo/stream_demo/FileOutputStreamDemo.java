@@ -9,13 +9,13 @@ public class FileOutputStreamDemo {
 
         // Byte streams
 
-        String fileName = "src\\topics\\stream_demo\\dataOutputFile.txt";
+        String fileName = "src\\topics\\file_demo\\stream_demo\\dataOutputFile.txt";
 
         FileOutputStream fOut = null;
 
         try {
             fOut = new FileOutputStream(fileName, true); // true is append to the old file
-            String str = "Welcome to Java. ";
+            String str = "\nWelcome to Java at Per Scholas.";
             byte[] data = str.getBytes();
             fOut.write(data);
 

@@ -9,7 +9,7 @@ public class FileInputStreamDemo {
 
         // Byte streams
 
-        String fileName = "src\\topics\\stream_demo\\dataFile1.txt";
+        String fileName = "src\\topics\\file_demo\\stream_demo\\dataFile1.txt";
 
         try {
             FileInputStream fIn = new FileInputStream(fileName);
@@ -17,7 +17,7 @@ public class FileInputStreamDemo {
             int i;
             while((i = fIn.read()) != -1)
             {
-                System.out.println((char) i); //  typecasting
+                System.out.print((char)i); //  typecasting
                 //byte --> char --> short --. long
             }
 
