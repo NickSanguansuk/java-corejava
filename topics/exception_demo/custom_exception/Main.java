@@ -8,7 +8,7 @@ public class Main {
 
         try {
             System.out.println("Starting...");
-            throw new CustomException1("This is for CustomExceptions1");
+            throw new CustomException1("This is a message for CustomExceptions1");
         } catch (Exception e) {
             System.out.println("-catch block-");
             System.out.println(e);

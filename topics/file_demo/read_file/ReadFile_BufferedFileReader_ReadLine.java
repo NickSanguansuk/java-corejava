@@ -12,6 +12,7 @@ public class ReadFile_BufferedFileReader_ReadLine {
 
         System.out.println("----------");
         System.out.println("BufferedReader, BufferedWriter ---> buffered character streams");
+        // It's generally a good idea to wrap a FileReader in a BufferedReader for improved performance.
         System.out.println("----------");
 
         FileReader fileReader = new FileReader(fileName);
