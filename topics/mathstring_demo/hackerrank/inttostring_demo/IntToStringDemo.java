@@ -1,4 +1,4 @@
-package topics.mathstring_demo.string_demo;
+package topics.mathstring_demo.hackerrank.inttostring_demo;
 
 import java.security.Permission;
 import java.util.InputMismatchException;
