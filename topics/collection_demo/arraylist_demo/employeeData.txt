@@ -1,0 +1,6 @@
+101, David, 15
+102, Tom, 36
+103, Joe, 47
+104, Jane, 22
+105, Marcus, 33
+109, Lauren, 44
