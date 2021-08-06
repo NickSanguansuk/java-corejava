@@ -1,5 +1,6 @@
 package topics.collection_demo.arraylist_demo;
 
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Main {
@@ -130,17 +131,17 @@ public class Main {
         System.out.println("----------");
         System.out.println("EmployeeInfo class");
 
-        EmployeeInfo empInfo = new EmployeeInfo();
+        EmployeeDisplayInfo empDisplayInfo = new EmployeeDisplayInfo();
 
-        int[] idArray = {101, 102, 103, 104, 105};
-        String[] nameArray = {"David", "Tom", "Joe", "Jane", "Marcus"};
-        int[] ageArray = {15, 36, 47, 22, 33};
+        empDisplayInfo.displayEmployee();
 
-        empInfo.addEmployeeInfo(idArray, nameArray, ageArray);
+        System.out.println();
 
-        empInfo.addEmployeeInfo(109, "Lauren", 44);
-
-        empInfo.displayEmployeeList();
+        try {
+            empDisplayInfo.displayEmployeeFromFile();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         System.out.println("----------");
 
