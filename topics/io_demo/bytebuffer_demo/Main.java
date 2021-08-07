@@ -22,6 +22,7 @@ public class Main {
         printOut(buff);
 
         // Set the limit to the current position, and the position is set to 0
+        // We have to flip() the buffer after we filled the buffer, so we can read it
         buff.flip();
 
         printOut(buff);
