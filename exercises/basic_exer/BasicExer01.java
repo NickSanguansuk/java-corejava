@@ -1,6 +1,6 @@
-package exercises;
+package exercises.basic_exer;
 
-public class BasicsExer01 {
+public class BasicExer01 {
     // Core Java - Exercises - Variables
 
     public static void main(String[] args) {

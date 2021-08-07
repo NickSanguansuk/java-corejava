@@ -1,8 +1,8 @@
-package exercises;
+package exercises.array_exer;
 
 import java.util.Arrays;
 
-public class ArraysExer {
+public class ArrayExer {
     // Core Java - Exercises - Arrays
 
     static void problem1() {
