@@ -11,12 +11,15 @@ public class UserApplication {
         // id == 0
         User user1 = getUser(0);
         System.out.println(user1);
+        System.out.println(user1.getName());
         userDao.update(user1, new String[]{"Jake", "jake@domain.com"});
 
         // id == 1
         User user2 = getUser(1);
         userDao.delete(user2);
         userDao.save(new User("Julie", "julie@domain.com"));
+
+        System.out.println("----------");
 
         userDao.getAll().forEach(user -> System.out.println(user.getName()));
     }
