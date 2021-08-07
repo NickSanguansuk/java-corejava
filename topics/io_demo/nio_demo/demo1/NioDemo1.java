@@ -1,19 +1,21 @@
-package topics.io_demo.nio_demo;
+package topics.io_demo.nio_demo.demo1;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
-public class NioDemo_1 {
+public class NioDemo1 {
 
     public static void main(String[] args) {
 
-        String fileName = "src\\topics\\io_demo\\nio_demo\\dataFile_1.txt";
+        String fileName = "src\\topics\\io_demo\\nio_demo\\dataFile1.txt";
 
         System.out.println("Read a file to console");
         System.out.println("----------");
+
+        // io   ---> Stream oriented, Blocking IO
+        // nio  ---> Buffer oriented, Non-Blocking IO, Selectors
 
         try {
             FileInputStream inputStream = new FileInputStream(fileName);
@@ -21,20 +23,18 @@ public class NioDemo_1 {
             long channelSize = inChannel.size();
 
             // initialize buffer
-            ByteBuffer buf = ByteBuffer.allocate((int)channelSize);
+            ByteBuffer buff = ByteBuffer.allocate((int)channelSize);
 
-            int bytesRead = inChannel.read(buf);
-            buf.flip(); // Make buffer ready for read
+            int bytesRead = inChannel.read(buff); // Read data into rest of buffer
+            buff.flip(); // Flip buffer (Make buffer ready)
 
             for (int i = 0; i < channelSize; i++) {
-                System.out.print((char)buf.get());
+                System.out.print((char)buff.get());
             }
 
             inChannel.close();
             inputStream.close();
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

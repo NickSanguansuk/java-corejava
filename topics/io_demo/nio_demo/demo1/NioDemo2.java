@@ -1,20 +1,19 @@
-package topics.io_demo.nio_demo;
+package topics.io_demo.nio_demo.demo1;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
-public class NioDemo_2 {
+public class NioDemo2 {
 
     public static void main(String[] args) {
 
-        String[] inFileNames = {"src\\topics\\io_demo\\nio_demo\\dataFile_2a.txt",
-                "src\\topics\\io_demo\\nio_demo\\dataFile_2b.txt"};
+        String[] inFileNames = {"src\\topics\\io_demo\\nio_demo\\dataFile2a.txt",
+                "src\\topics\\io_demo\\nio_demo\\dataFile2b.txt"};
 
-        String outFileName = "src\\topics\\io_demo\\nio_demo\\dataFile_2c.txt";
+        String outFileName = "src\\topics\\io_demo\\nio_demo\\dataFile2c.txt";
 
         System.out.println("Read 2 files (2a, 2b) to a file (2c)");
         System.out.println("----------");
@@ -33,12 +32,12 @@ public class NioDemo_2 {
                 long channelSize = inChannel.size();
                 ByteBuffer buff = ByteBuffer.allocate((int) channelSize);
 
-                int bytesRead = inChannel.read(buff);
-                buff.flip();
+                int bytesRead = inChannel.read(buff); // Read data into rest of buffer
+                buff.flip(); // Flip buffer (Make buffer ready)
 
                 while (buff.hasRemaining()) {
                     System.out.println(i);
-                    outChannel.write(buff);
+                    outChannel.write(buff); // Write header + date to channel
 
                     // write to console ???
                     System.out.println(buff);
@@ -52,8 +51,6 @@ public class NioDemo_2 {
             outChannel.close();
             outStream.close();
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

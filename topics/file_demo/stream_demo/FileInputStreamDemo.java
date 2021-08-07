@@ -9,7 +9,7 @@ public class FileInputStreamDemo {
 
         // Byte streams
 
-        String fileName = "src\\topics\\file_demo\\stream_demo\\dataFile_1.txt";
+        String fileName = "src\\topics\\file_demo\\stream_demo\\dataFile1.txt";
 
         try {
             FileInputStream fIn = new FileInputStream(fileName);
