@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
 
-public class WriteFile {
+public class CopyFile {
 
     public static void main(String[] args) {
 
