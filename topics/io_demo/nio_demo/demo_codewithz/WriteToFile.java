@@ -18,23 +18,26 @@ public class WriteToFile {
         Path p2 = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_codewithz\\data_folder\\dataFile2.txt");
 
         try {
-            Path donePath1 = Files.createFile(p1);
 
-            String content = "Hey Coding Owls";
-
-            Files.write(donePath1, content.getBytes());
-
-            System.out.println("Data written as byte array");
+            if (Files.exists(p1)) {
+                System.out.println("File already exists");
+            } else {
+                Path donePath1 = Files.createFile(p1);
+                String content = "Hey Coding Owls";
+                Files.write(donePath1, content.getBytes());
+                System.out.println("Data written as byte array");
+            }
 
             System.out.println("----------");
 
-            List<String> lineData = Files.readAllLines(pPoem);
-
-            Path donePath2 = Files.createFile(p2);
-
-            Files.write(donePath2, lineData);
-
-            System.out.println("Data written in file using List for String");
+            if (Files.exists(p2)) {
+                System.out.println("File already exists");
+            } else {
+                List<String> lineData = Files.readAllLines(pPoem);
+                Path donePath2 = Files.createFile(p2);
+                Files.write(donePath2, lineData);
+                System.out.println("Data written in file using List for String");
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
