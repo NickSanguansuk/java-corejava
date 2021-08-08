@@ -14,6 +14,7 @@ public class CreateDirectory {
         // 2. CreateFile
         // 3. ReadFromFile
         // 4. WriteToFile
+        // 5. CopyFile
 
         Path p = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_codewithz\\data_folder");
 
