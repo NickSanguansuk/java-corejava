@@ -117,6 +117,19 @@ public class MathStringDemo {
 
         {
             // Character data type
+            System.out.println("Character data type");
+
+            char letter = 'A';      // ASCII
+            char num_char = '4';    // ASCII
+            System.out.println(letter);
+            System.out.println(num_char);
+
+            letter = '\u0041';      // Unicode
+            num_char = '\u0034';    // Unicode
+            System.out.println(letter);
+            System.out.println(num_char);
+
+            System.out.println("----------");
 
             char cL = 'a';
             char cU = 'A';
@@ -155,9 +168,10 @@ public class MathStringDemo {
 
         {
             // Creating Strings
+            System.out.println("Creating Strings");
 
             String s1 = "Welcome to Java";
-            String s2 = new String("Welcome to Java");
+            String s2 = new String("Welcome to Java"); // creates two objects and one reference variable
             String s3 = new String();
 
             // String is immutable
@@ -237,6 +251,7 @@ public class MathStringDemo {
 
         {
             // printf
+            System.out.println("printf");
 
             int i = 1024;
             byte b = 12;
@@ -284,6 +299,8 @@ public class MathStringDemo {
             System.out.println(Math.abs(-8));
             System.out.println(Math.abs(-8.76));
 
+            System.out.println("----------");
+
             double d = 85.5;
 
             System.out.println(Math.ceil(d));
@@ -291,14 +308,27 @@ public class MathStringDemo {
             System.out.println(Math.rint(d));
             System.out.println(Math.round(d));
 
-            double rad = Math.toRadians(180);
-            System.out.println(rad);
+            System.out.println("----------");
 
-            System.out.println("sin():" + Math.sin(rad));
-            System.out.println("cos():" + Math.cos(rad));
-            System.out.println("tan():" + Math.tan(rad));
+            double rad = Math.toRadians(180);
+            System.out.println(rad); // 3.14159265
+
+            System.out.println("sin():" + Math.sin(rad));   // 0
+            System.out.println("cos():" + Math.cos(rad));   // -1
+            System.out.println("tan():" + Math.tan(rad));   // 0
+
+            System.out.println("----------");
+
             double sin = Math.sin(rad);
-            System.out.println( Math.rint(sin));
+            System.out.println(sin);
+            System.out.println(Math.rint(sin));
+
+            System.out.println("----------");
+
+            System.out.println("sin(30 degree) == 0.5");
+            // 180 / 6 == 30
+            System.out.println(Math.sin(Math.PI / 6)); // 0.5
+            System.out.println(Math.sin(Math.toRadians(30)));
         }
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
