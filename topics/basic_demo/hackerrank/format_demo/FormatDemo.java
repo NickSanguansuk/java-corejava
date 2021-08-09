@@ -1,4 +1,4 @@
-package topics.mathstring_demo.hackerrank.format_demo;
+package topics.basic_demo.hackerrank.format_demo;
 
 import java.text.NumberFormat;
 import java.util.Locale;
