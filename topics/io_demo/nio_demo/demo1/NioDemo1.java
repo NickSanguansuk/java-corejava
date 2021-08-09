@@ -9,7 +9,7 @@ public class NioDemo1 {
 
     public static void main(String[] args) {
 
-        String fileName = "src\\topics\\io_demo\\nio_demo\\dataFile1.txt";
+        String fileName = "src\\topics\\io_demo\\nio_demo\\demo1\\dataFile1.txt";
 
         System.out.println("Read a file to console");
         System.out.println("----------");
@@ -20,17 +20,27 @@ public class NioDemo1 {
         try {
             FileInputStream inputStream = new FileInputStream(fileName);
             FileChannel inChannel = inputStream.getChannel();
-            long channelSize = inChannel.size();
+            long fileSize = inChannel.size();
 
             // initialize buffer
-            ByteBuffer buff = ByteBuffer.allocate((int)channelSize);
+            //ByteBuffer buff = ByteBuffer.allocate((int)fileSize);
+            // Let's try set the buffer size smaller
+            ByteBuffer buff = ByteBuffer.allocate(16);
 
             int bytesRead = inChannel.read(buff); // Read data into rest of buffer
-            buff.flip(); // Flip buffer (Make buffer ready)
 
-            for (int i = 0; i < channelSize; i++) {
-                System.out.print((char)buff.get());
+            while (bytesRead != -1) {
+                //System.out.println("Read (bytes): " + bytesRead);
+                buff.flip(); // Flip buffer (Make buffer ready)
+
+                while (buff.hasRemaining()) {
+                    System.out.print((char)buff.get());
+                }
+
+                buff.clear(); // Make buffer ready for writing
+                bytesRead = inChannel.read(buff);
             }
+            System.out.println();
 
             inChannel.close();
             inputStream.close();
@@ -38,7 +48,6 @@ public class NioDemo1 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
     }
 }
