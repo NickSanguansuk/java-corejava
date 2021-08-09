@@ -106,13 +106,34 @@ public class BasicDemo {
             System.out.println("Size of long: " + (Long.SIZE / 8) + " bytes.");
             System.out.println("Size of float: " + (Float.SIZE / 8) + " bytes.");
             System.out.println("Size of double: " + (Double.SIZE / 8) + " bytes.");
+            System.out.println("Size of boolean: 1 bytes.");
         }
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
 
         {
-            int i1 = '\u0041';            // 'A', 65
+            System.out.println("Unicode");
+
+            // Hex      0x0041
+            // Decimal  65
+            // Octal    0101
+            // char     'A'
+            char c1 = '\u0041';
+            System.out.println(c1);
+            int i1 = '\u0041';
             System.out.println(i1);
+
+            System.out.println("----------");
+
+            char a = 0101; // 0101 (Octal) == 65 (Decimal)
+            char nine = 57;
+            char plus = 0x2b; // 0x2b (Hex) = 43 (Decimal)
+            char tilde = 126;
+
+            System.out.println(a);
+            System.out.println(nine);
+            System.out.println(plus);
+            System.out.println(tilde);
         }
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
