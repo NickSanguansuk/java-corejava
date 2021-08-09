@@ -111,6 +111,8 @@ public class ArrayDemo {
 
     public static void main(String[] args) {
 
+        System.out.println("---------- ---------- ---------- ---------- ----------");
+
         {
             // Playing with the main method signature
             // The args parameter is an array of String
