@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
@@ -158,9 +159,13 @@ public class Main {
         Predicate<String> checkName = (n) -> n.startsWith("J");
         for (String name : names) {
             if(checkName.test(name)) {
-                System.out.println(name);
+                System.out.print(name + ", ");
             }
         }
+        System.out.println();
+
+        Predicate<String> checkLength = str -> str.length() > 5;
+        System.out.println(checkLength.test("Elephant"));
 
         System.out.println("---");
 
@@ -169,14 +174,27 @@ public class Main {
         Consumer<Integer> say = (x) -> System.out.println(x);
         say.accept(100);
 
-        Consumer<Integer> adding200 = (x) -> {
+        Consumer<Integer> add200AndPrint = (x) -> {
             int b = x + 200;
             System.out.println(b);
         };
-        adding200.accept(150);
+        add200AndPrint.accept(150);
 
         Consumer<String> toUpper = (x) -> System.out.println(x.toUpperCase());
         toUpper.accept("TEKsystems");
+
+        // This will not work (Because lambda is pass by value)
+        double totalRevenue = 1000;
+        System.out.println("totalRevenue: " + totalRevenue);
+        Consumer<Double> add100 = value -> value += 100;
+        add100.accept(totalRevenue);
+        System.out.println("totalRevenue: " + totalRevenue);
+
+        Person p1 = new Person();
+        System.out.println("name: " + p1.getName());
+        Consumer<Person> setName = t -> t.setName("Unnamed");
+        setName.accept(p1);
+        System.out.println("name: " + p1.getName());
 
         System.out.println("---");
 
@@ -190,6 +208,19 @@ public class Main {
         Supplier<Integer> supRandInt = () -> (int)(Math.random() * 10);
         Integer randNum = supRandInt.get();
         System.out.println(randNum);
+
+        System.out.println("---");
+
+        System.out.println("Function ---> R apply(T t)");
+
+        //Function<T, R>
+        Function<String, Person> createPerson = (name) -> {
+            Person pNew = new Person();
+            pNew.setName(name);
+            return pNew;
+        };
+        Person newPerson = createPerson.apply("Wasin");
+        System.out.println(newPerson);
 
         System.out.println("----------");
 

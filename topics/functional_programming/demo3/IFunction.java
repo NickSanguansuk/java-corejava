@@ -1,4 +1,4 @@
-package topics.functional_programming.demo2;
+package topics.functional_programming.demo3;
 
 @FunctionalInterface
 public interface IFunction<T, R> {
