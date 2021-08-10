@@ -1,10 +1,10 @@
-package topics.basic_demo.hackerrank.inttostring_demo;
+package topics.basic_demo.hackerrank;
 
 import java.security.Permission;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class IntToStringDemo {
+public class JavaIntToString {
 
     public static void main(String[] args) {
 

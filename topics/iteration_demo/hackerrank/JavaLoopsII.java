@@ -2,7 +2,7 @@ package topics.iteration_demo.hackerrank;
 
 import java.util.Scanner;
 
-public class LoopTheSeries {
+public class JavaLoopsII {
 
     public static void main(String[] args) {
 
@@ -20,6 +20,7 @@ public class LoopTheSeries {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter how many series do you want?: ");
         int t = in.nextInt();
+
         for (int i = 0; i < t; i++) {
             System.out.print("Enter a, b, and n: ");
             int a = in.nextInt();

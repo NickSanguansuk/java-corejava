@@ -1,10 +1,10 @@
-package topics.basic_demo.hackerrank.format_demo;
+package topics.basic_demo.hackerrank;
 
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class FormatDemo {
+public class JavaCurrencyFormatter {
 
     public static void main(String[] args) {
 

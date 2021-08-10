@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("----------");
+        System.out.println("ArrayList");
         System.out.println("---> ArrayList of Object");
 
         List<Object> list1 = new ArrayList<>();
