@@ -57,21 +57,38 @@ public class Main {
 
         List<Integer> list5 = new ArrayList<>(Arrays.asList(10, 20, 30, 40, 50));
 
-        // 1
+        // 1 .toString()
         System.out.println(list5);
 
-        // 2
+        // 2 for loop (External loop)
+        for (int i = 0; i < list5.size(); i++) {
+            System.out.print(list5.get(i) + ", ");
+        }
+        System.out.println();
+
+        // 3 enhance for loop (External loop)
         for (Integer i : list5) {
             System.out.print(i + ", ");
         }
         System.out.println();
 
-        // 3
+        // Internal loops is faster than External loops
+
+        // 4 forEach loop (Internal loop)
+        list5.forEach(i -> System.out.print(i + ", "));
+        System.out.println();
+
+        // 4.5 forEach loop with method referencing (Internal loop)
+        list5.forEach(System.out::println);
+
+        // 5
         Iterator<Integer> itr = list5.iterator();
         while (itr.hasNext()) {
             System.out.print(itr.next() + ", ");
         }
         System.out.println();
+
+
 
         System.out.println("----------");
 

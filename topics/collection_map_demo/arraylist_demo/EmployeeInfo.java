@@ -38,7 +38,7 @@ public class EmployeeInfo {
     }
 
     public List<Employee> pullDataFromFile() throws FileNotFoundException {
-        String fileName = "src\\topics\\collection_demo\\arraylist_demo\\employeeData.txt";
+        String fileName = "src\\topics\\collection_map_demo\\arraylist_demo\\employeeData.txt";
 
         File file = new File(fileName);
 
