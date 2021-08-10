@@ -1,4 +1,4 @@
-package topics.collection_demo.linkedlist_demo;
+package topics.collection_map_demo.linkedlist_demo;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package topics.collection_demo.arraylist_demo;
+package topics.collection_map_demo.arraylist_demo;
 
 public class Employee {
 

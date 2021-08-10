@@ -22,7 +22,11 @@ public class shortcutCommands {
 
         System.out.println("Ctrl+Shift+F10	---> Run (First run)");
         System.out.println("Shift+F10	    ---> Re-Run");
+        System.out.println("Alt+Shift+F10   ---> To choose what to run");
         System.out.println("Shift+F9	    ---> Debug");
+        System.out.println("Ctrl+F2         ---> Stop (stop the running)");
+
+        System.out.println("Ctrl+E          ---> To choose what page to work on");
 
         System.out.println("F9              ---> Debug: Resume program (Important)");
         System.out.println("F8              ---> Debug: Step over");
