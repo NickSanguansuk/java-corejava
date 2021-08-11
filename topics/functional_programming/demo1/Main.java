@@ -1,5 +1,6 @@
 package topics.functional_programming.demo1;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
@@ -7,6 +8,8 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -35,19 +38,23 @@ public class Main {
         System.out.println("----------");
         System.out.println("Using lambda expression");
 
-        HumanInterface humanInterface = () -> { System.out.println("abcd efg hijk lmnop"); };
+        HumanInterface humanInterface = () -> {
+            System.out.println("abcd efg hijk lmnop");
+        };
         humanInterface.say();
 
         System.out.println("---");
 
         // Longest
         HumanInterface2 i1 = (Integer num) -> {
-          return "I ate " + num + " sushi rolls";
+            return "I ate " + num + " sushi rolls";
         };
         System.out.println(i1.eat(10));
 
         // Medium (I like the most)
-        HumanInterface2 i2 = (num) -> { return "I ate " + num + " stakes"; };
+        HumanInterface2 i2 = (num) -> {
+            return "I ate " + num + " stakes";
+        };
         System.out.println(i2.eat(10));
 
         // Shortest
@@ -81,7 +88,9 @@ public class Main {
 
         System.out.println("---");
 
-        MathOperationInterface powOperation = (a, b) -> { return (int)Math.pow(a, b); };
+        MathOperationInterface powOperation = (a, b) -> {
+            return (int) Math.pow(a, b);
+        };
         System.out.println((powOperation.manipulateTwoNumber(2, 20)));
 
         MathOperationInterface addOperation = (a, b) -> a + b;
@@ -158,7 +167,7 @@ public class Main {
         List<String> names = Arrays.asList("Haseeb", "Eric", "Joseph", "Brian", "John");
         Predicate<String> checkName = (n) -> n.startsWith("J");
         for (String name : names) {
-            if(checkName.test(name)) {
+            if (checkName.test(name)) {
                 System.out.print(name + ", ");
             }
         }
@@ -205,7 +214,7 @@ public class Main {
         System.out.println(meaning);
 
         // [0, 1, 2, ..., 9]
-        Supplier<Integer> supRandInt = () -> (int)(Math.random() * 10);
+        Supplier<Integer> supRandInt = () -> (int) (Math.random() * 10);
         Integer randNum = supRandInt.get();
         System.out.println(randNum);
 
@@ -229,7 +238,9 @@ public class Main {
         //TestFuncInterface test = () -> {};            // 1
         //TestFuncInterface test = () -> 42;            // 2
         //TestFuncInterface test = () -> null;          // 3
-        TestFuncInterface test = () -> { return 42; };  // 4
+        TestFuncInterface test = () -> {
+            return 42;
+        };  // 4
 
         System.out.println(test.testingMethod());
 
@@ -258,6 +269,19 @@ public class Main {
 
         System.out.println(reverser_space.comparator("Hello class of JD"));
         System.out.println(normal_noSpace.comparator("Hello class of JD"));
+
+        System.out.println("----------");
+
+        System.out.println("forEach loop (internal loop)");
+
+        List<String> nameList = new ArrayList<>(Arrays.asList("Larry", "Steve", "James", "Conan", "Ellen"));
+
+        nameList.forEach(name -> System.out.print(name + ", "));
+        System.out.println();
+
+        System.out.println("---");
+
+        nameList.forEach(System.out::println);
 
         System.out.println("----------");
 
