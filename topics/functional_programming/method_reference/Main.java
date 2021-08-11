@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 // Call by value
 // Call by method
@@ -115,6 +116,32 @@ public class Main {
         myPrinter.print(str, (strParser::convert2));
 
         System.out.println("----------");
+        System.out.println("Example with array");
 
+        String[] nameArray = {"Barbara", "James", "Mary", "John", "Robert"};
+
+        System.out.println(Arrays.asList(nameArray));
+
+        System.out.println("---");
+        System.out.println("using Stream.of()"); // a little overkill
+        // forEach() on a stream differs slightly form
+        // forEach() on a collection
+        // e.g., forEach() ordering is undefined on a stream,
+        // whereas it's defined for a collection.
+
+        Stream.of(nameArray).forEach(System.out::print);
+        System.out.println();
+
+        System.out.println("---");
+        System.out.println("using Arrays.asList()");
+
+        Arrays.asList(nameArray).forEach(System.out::print);
+        System.out.println();
+
+
+
+
+
+        System.out.println("----------");
     }
 }
