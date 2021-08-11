@@ -1,4 +1,4 @@
-package topics.basic_demo;
+package topics.basic_demo.demo1;
 
 public class BasicDemo {
     // Core Java - Introduction to Java Basics

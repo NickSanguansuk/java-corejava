@@ -1,4 +1,4 @@
-package topics.basic_demo;
+package topics.basic_demo.math_string;
 
 public class MathStringDemo {
     // Core Java - Math, Character, String
