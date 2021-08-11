@@ -4,10 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Exception is: an event that occurs during the execution of a program
-        // that disrupts the normal flow of instructions
+        // Exception is: an event that occurs during the execution of a program that disrupts the normal flow of instructions
+        // Java Exceptions are divided into two categories RuntimeException also known as unchecked Exception and checked Exception.
 
-        // Unchecked exception is:
+        // Checked exception (Compile-time exception):
+        // ex: FileNotFoundException
+
+        // Unchecked exception (Run-time exception):
         // Exceptions that inherit from java.lang.RuntimeException or java.lang.Error are so-called "unchecked exceptions"
         // that can be caught by a try-catch construct, they don't have to be, though.
         System.out.println("Unchecked exceptions");

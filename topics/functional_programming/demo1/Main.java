@@ -1,9 +1,6 @@
 package topics.functional_programming.demo1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -282,6 +279,26 @@ public class Main {
         System.out.println("---");
 
         nameList.forEach(System.out::println);
+
+        System.out.println("----------");
+        System.out.println("Another forEach()");
+
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(5);
+        numbers.add(9);
+        numbers.add(12);
+        numbers.add(3);
+        numbers.add(8);
+
+        Collections.sort(numbers);
+
+        numbers.forEach((n) -> { System.out.print(n + ", "); });
+        System.out.println();
+
+        System.out.println("----------");
+        System.out.println("Others");
+
+
 
         System.out.println("----------");
 
