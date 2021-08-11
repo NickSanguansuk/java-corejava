@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 // Call by value
 // Call by method
 
+@FunctionalInterface
 interface Parser {
     String parse(String str);
 }

@@ -1,5 +1,6 @@
 package topics.functional_programming.demo1;
 
+@FunctionalInterface
 public interface MathOperationInterface {
 
     int manipulateTwoNumber(int a, int b);

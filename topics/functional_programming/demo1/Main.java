@@ -224,6 +224,42 @@ public class Main {
 
         System.out.println("----------");
 
+        System.out.println("Testing ---> TestFunctionalInterface");
+
+        //TestFuncInterface test = () -> {};            // 1
+        //TestFuncInterface test = () -> 42;            // 2
+        //TestFuncInterface test = () -> null;          // 3
+        TestFuncInterface test = () -> { return 42; };  // 4
+
+        System.out.println(test.testingMethod());
+
+        System.out.println("----------");
+
+        System.out.println("ComparatorInterface");
+
+        ComparatorInterface reverser_space = (str) -> {
+            String sub_str = "";
+            for (int i = str.length() - 1; i >= 0; i--) {
+                sub_str += str.charAt(i);
+            }
+            return sub_str;
+        };
+
+        ComparatorInterface normal_noSpace = (str) -> {
+            String sub_str = "";
+            for (int i = 0; i < str.length(); i++) {
+                String s = Character.toString(str.charAt(i));
+                if (!s.equals(" ")) {
+                    sub_str += s;
+                }
+            }
+            return sub_str;
+        };
+
+        System.out.println(reverser_space.comparator("Hello class of JD"));
+        System.out.println(normal_noSpace.comparator("Hello class of JD"));
+
+        System.out.println("----------");
 
     }
 }
