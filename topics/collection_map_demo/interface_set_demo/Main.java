@@ -11,6 +11,9 @@ public class Main {
         System.out.println("---------- ---------- ---------- ---------- ----------");
 
         System.out.println("Set (Interface)");
+        // Set: a Set contains no duplicate elements
+        //      SortedSet extends set and adds the requirement that elements are ordered.
+        //      NavigableSet extends set and adds operations for fuzzy comparisons.
 
         // Set is a collection with no Duplicate Elements or Every element of set must be unique.
         // set is interface. we can not create object. we give implementation by HashSet, TreeSet and other

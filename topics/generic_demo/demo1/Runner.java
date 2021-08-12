@@ -8,6 +8,15 @@ public class Runner {
 
     public static void main(String[] args) {
 
+        // The most commonly used type parameter names are:
+        //
+        //  E       - Element (used extensively by the Java Collections Framework)
+        //  T       - Type
+        //  S,U,V etc. - 2nd, 3rd, 4th types
+        //  K       - Key
+        //  V       - Value
+        //  N       - Number
+
         System.out.println("---> generics methods");
 
         GenericsDemo generics = new GenericsDemo();

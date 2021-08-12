@@ -23,6 +23,16 @@ public class Main {
         // Treemap contain only unique key and contain value based on the keys,
         // Treemap cannot have null key but can have multiple null values
 
+        // Here are some of the most commonly use Map methods:
+        // clear()			    removes all mappings
+        // containsKey(K key)	tests whether the map includes the given key
+        // containsValue(V v)	tests whether the map includes the given value
+        // get(K key)		    gets the value associated with the given key
+        // put(K key, V value)	associates value with the given key
+        // keySet()			    returns the Set<K> of all keys in the map.
+        // remove(K key)		removes the key and its associated value from the map
+        // replace(K key, V value)	replaces the entry for the given key
+
         System.out.println("---------- ---------- ---------- ---------- ----------");
 
         System.out.println("HashMap");

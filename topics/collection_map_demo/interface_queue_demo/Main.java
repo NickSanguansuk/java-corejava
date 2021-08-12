@@ -11,6 +11,10 @@ public class Main {
         System.out.println("---------- ---------- ---------- ---------- ----------");
 
         System.out.println("Queue (Interface)");
+        // Queue: a Queue is designed to hold elements for future processing.
+        //      Queues are first-in-first-out (FIFO).
+        //      Some Java “queues” are last-in-first-out (LIFO), though these are more properly called Stacks.
+        //      Deque is a double-ended queue that support insertion/removal at both ends.
 
         Queue<String> q1 = new LinkedList<>();
         Queue<Integer> q2 = new LinkedList<>();

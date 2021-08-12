@@ -72,6 +72,17 @@ public class MathStringDemo {
         System.out.println("---------- ---------- ---------- ---------- ----------");
 
         {
+            System.out.println("Arithmetic operation is Left ---> Right");
+
+            System.out.println(25 + 12.5 + "Nick");
+            System.out.println("Nick" + 25 + 12.5);
+
+            System.out.println("Assignment operation is Right ---> Left");
+        }
+
+        System.out.println("---------- ---------- ---------- ---------- ----------");
+
+        {
             // Convert String into Wrapper
             String str = "200";
 
