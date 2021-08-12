@@ -1,8 +1,9 @@
 package topics.functional_programming.stream_api;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.File;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -23,7 +24,7 @@ public class Main {
 
         nameList.forEach(System.out::println);
 
-        System.out.println("---");
+        System.out.println("----------");
         System.out.println("stream() and forEach()");
 
         // filter for names that start with "C" and "S"
@@ -39,13 +40,29 @@ public class Main {
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
         System.out.println("Some examples of Stream");
+        System.out.println("using .ifPresent()");
 
         Stream.of("a1", "a2", "a3", "d2", "c")
                 .findFirst()
                 .ifPresent(s -> System.out.println(s));
 
         System.out.println("---");
+        System.out.println("using orElse()");
 
+        String str1 = Stream.of("a1", "a2", "a3", "d2", "c")
+                .findFirst()
+                .orElse("");
+        System.out.println(str1);
+
+        System.out.println("---");
+        System.out.println("using Optional<String>");
+
+        Optional<String> str2 = Stream.of("a1", "a2", "a3", "d2", "c")
+                .findFirst();
+        System.out.println(str2);
+
+        System.out.println("----------");
+        System.out.println("Nothing execute here");
         // The following code snippet returns nothing to the console
         // It isn't even executed
         // Intermediate ops only executed when terminal op is present
@@ -55,7 +72,7 @@ public class Main {
                     return true;
                 });
 
-        System.out.println("---");
+        System.out.println("----------");
 
         Stream.of("a1", "a2", "a3", "d2", "c")
                 .filter(s -> {
@@ -64,7 +81,7 @@ public class Main {
                 })
                 .forEach(s -> System.out.println("forEach: " + s));
 
-        System.out.println("---");
+        System.out.println("----------");
 
         // Example contains two intermediate ops and one terminal op
         // Bot map & filter are called once for each string
@@ -80,7 +97,7 @@ public class Main {
                 })
                 .forEach(s -> System.out.println("forEach: " + s));
 
-        System.out.println("---");
+        System.out.println("----------");
 
         // Moving filter to the start of the chain
         // Reduces number of executions
@@ -99,6 +116,7 @@ public class Main {
         System.out.println("---------- ---------- ---------- ---------- ----------");
         System.out.println("Creating Stream(s)");
 
+        System.out.println("Create empty Stream");
         Stream<Integer> empStream1 = Stream.empty();
         Stream<String> empStream2 = Stream.empty();
 
@@ -107,6 +125,7 @@ public class Main {
         System.out.println();
 
         System.out.println("---");
+        System.out.println("Stream.of() method");
 
         Stream<Integer> stream1 = Stream.of(1, 2, 3, 4, 5);
         Stream<String> stream2 = Stream.of("Bat", "Cat", "Rat");
@@ -122,40 +141,131 @@ public class Main {
         System.out.println("---");
         System.out.println("Create Stream from Array");
 
-        Integer[] intArr = {1, 3, 5, 7, 9};
-        Stream<Integer> stream4 = Stream.of(intArr);
-        Stream<Integer> stream5 = Arrays.stream(intArr);
+        Integer[] intArr = {4, 1, 3, 8, 5, 2, 7, 9, 6};     // Need to be Integer[] (not int[])
+        String[] strArr = {"ABC", "DEF", "GHI", "JKL", "MNO", "PQR"};
 
-        stream4.forEach(p -> System.out.print(p + ", "));
+        Stream<Integer> streamInt1 = Stream.of(intArr);
+        Stream<Integer> streamInt2 = Arrays.stream(intArr);
+
+        Stream<String> streamStr1 = Stream.of(strArr);
+        Stream<String> streamStr2 = Arrays.stream(strArr);
+
+        streamInt1.forEach(p -> System.out.print(p + ", "));
         System.out.println();
-        stream5.forEach(p -> System.out.print(p + ", "));
+        streamInt2.forEach(p -> System.out.print(p + ", "));
+        System.out.println();
+        streamStr1.forEach(p -> System.out.print(p + ", "));
+        System.out.println();
+        streamStr2.forEach(p -> System.out.print(p + ", "));
         System.out.println();
 
         System.out.println("---");
         System.out.println("Create Stream from Collection");
 
-        List<String> list6 = new ArrayList<>(Arrays.asList("ABC", "DEF", "GHI", "JKL"));
+        List<Integer> intList1 = new ArrayList<>(Arrays.asList(intArr));
+        List<String> strList1 = new ArrayList<>(Arrays.asList(strArr));
 
-        // normal forEach with List
-        list6.forEach(p -> System.out.print(p + ", "));
+        Stream<Integer> streamInt3 = intList1.stream();
+
+        //Stream<Integer> streamInt4 = Stream.of(intList1);     // Compile Error
+
+        Stream<String> streamStr3 = strList1.stream();
+
+        //Stream<String> streamStr4 = Stream.of(strList1.toString());     // Logical Error
+
+        streamInt3.forEach(p -> System.out.print(p + ", "));
+        System.out.println();
+        //streamInt4.forEach(p -> System.out.print(p + ", "));
+        //System.out.println();
+        streamStr3.forEach(p -> System.out.print(p + ", "));
+        System.out.println();
+        //streamStr4.forEach(p -> System.out.print(p + ", "));
+        //System.out.println();
+
+        System.out.println("---------- ---------- ---------- ---------- ----------");
+
+        System.out.println("Old Imperative Style   VS   New Declarative Style");
+
+        System.out.println(strList1);
+
+        System.out.println("---");
+
+        System.out.println("Old (External loop)");
+        for (String s : strList1) {
+            System.out.print(s + ", ");
+        }
         System.out.println();
 
-        // convert List to Stream, then forEach
-        Stream<String> stream6 = list6.stream();
-        stream6.forEach(p -> System.out.print(p + ", "));
+        System.out.println("New (Internal Loop)");
+        strList1.forEach(s -> System.out.print(s + ", "));
         System.out.println();
 
-        Stream<String> stream7 = list6.stream();
-        stream7.filter(p -> p.compareTo("GHI") >= 0)
-                .forEach(p -> System.out.print(p + ", "));
-        System.out.println();
+        strList1.forEach(System.out::println);
 
+        System.out.println("----------");
 
+        System.out.println(intList1);
 
+        System.out.println("Old");
+        int count1 = 0;
+        for (Integer i : intList1) {
+            if (i % 2 == 0) {
+                count1++;
+            }
+        }
+        System.out.println(count1);
 
+        System.out.println("New");
+        long count2 = intList1.stream()
+                .filter(i -> i % 2 == 0)
+                .count();
+        System.out.println(count2);
 
+        System.out.println("----------");
+        // Finding whether all integers are less than 10 in the list
 
+        System.out.println("Old");
+        boolean b1 = true;
+        for (Integer i : intList1) {
+            if (i >= 10) {
+                b1 = false;
+                break;
+            }
+        }
+        System.out.println(b1);
 
+        System.out.println("New");
+        boolean b2 = intList1.stream()
+                .allMatch(i -> i < 10);
+        System.out.println(b2);
+
+        System.out.println("----------");
+        // Finding all sub-directory names in a directory
+        String dirName = "src\\topics\\functional_programming";
+
+        System.out.println("Old");
+        List<String> allDirNames1 = new ArrayList<>();
+        for (File file : new File(dirName).listFiles()) {
+            if (file.isDirectory()) {
+                allDirNames1.add(file.getName());
+            }
+        }
+        System.out.println(allDirNames1);
+
+        System.out.println("New");
+        List<String> allDirNames2 = Arrays.stream(new File(dirName).listFiles())
+                .filter(File::isDirectory)
+                .map(File::getName)
+                .collect(Collectors.toList());
+        System.out.println(allDirNames2);
+
+        List<String> allDirNames3 = Arrays.stream(new File(dirName).listFiles())
+                .filter(f -> f.isDirectory())
+                .map(f -> {
+                    return f.getName();
+                })
+                .collect(Collectors.toList());
+        System.out.println(allDirNames3);
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
 
@@ -173,24 +283,32 @@ public class Main {
         // •	anyMatch()
         // •	allMatch()
         // •	noneMatch()
-        // •	collect()  collects the elements in the stream in a collection list
+        // •	collect()  collects the elements in the stream in a collection list1
         // •	count()
         // •	findAny()
         // •	findFirst()
         // •	forEach()
+        // •	forEachOrdered()
         // •	min()
         // •	max()
         // •	reduce()
         // •	toArray()
 
+        // Optional
+        // •	orElse()
+        // •	ifPresent()
 
+        System.out.println("Terminal Operations Examples – use forEach()");
 
-
-
-
+        intList1.stream().forEach(x -> System.out.print(x + ", "));
+        System.out.println();
+        // Same as
+        Stream<Integer> stream = intList1.stream();
+        stream.forEach(x -> System.out.print(x + ", "));
+        System.out.println();
 
         System.out.println("----------");
-        System.out.println("allMatch()");
+        System.out.println("---> .allMatch()");
 
         ArrayList<String> stringList = new ArrayList<>();
 
@@ -198,34 +316,207 @@ public class Main {
         stringList.add("OneTo killer a mucking bird");
         stringList.add("OneGone with the winder");
 
-        boolean result = stringList.stream().allMatch(p -> { return p.startsWith("One"); });
+        boolean result = stringList.stream()
+                .allMatch(p -> {
+                    return p.startsWith("One");
+                });
         System.out.println(result);
 
-        boolean result2 = stringList.stream().allMatch(p -> { return p.contains("killer"); });
+        boolean result2 = stringList.stream()
+                .allMatch(p -> {
+                    return p.contains("killer");
+                });
         System.out.println(result2);
 
         System.out.println("----------");
-        System.out.println("anyMatch()");
+        System.out.println("---> .anyMatch()");
 
-        boolean result3 = stringList.stream().anyMatch(p -> { return p.contains("killer"); });
+        boolean result3 = stringList.stream()
+                .anyMatch(p -> {
+                    return p.contains("killer");
+                });
         System.out.println(result3);
 
+        System.out.println("----------");
+        System.out.println("---> .collect()");
+        // It returns result container such as List, Set or Map according to supplied Collectors.
 
+        System.out.println("Stream ---> List");
+        List<String> resultList1 = strList1.stream().collect(Collectors.toList());
+        System.out.println(resultList1);
 
+        System.out.println("List ---> Array");
+        // Not recommended
+        String[] resultArr1 = strList1.stream().toArray(size -> new String[size]);
+        for (String s : resultArr1) {
+            System.out.print(s + ", ");
+        }
+        System.out.println();
 
+        // Good way
+        String[] resultArr2 = strList1.toArray(size -> new String[size]);
+        for (String s : resultArr2) {
+            System.out.print(s + ", ");
+        }
+        System.out.println();
 
+        // One of the best ways
+        String[] resultArr3 = strList1.toArray(String[]::new);
+        for (String s : resultArr3) {
+            System.out.print(s + ", ");
+        }
+        System.out.println();
 
+        // Better way
+        String[] resultArr4 = strList1.toArray(new String[strList1.size()]);
+        for (String s : resultArr4) {
+            System.out.print(s + ", ");
+        }
+        System.out.println();
+
+        // Best way?
+        String[] resultArr5 = strList1.toArray(new String[0]);
+        for (String s : resultArr5) {
+            System.out.print(s + ", ");
+        }
+        System.out.println();
 
         System.out.println("----------");
-        System.out.println("Terminal Op: .collect() ---> To convert Stream to Collection");
+        System.out.println("---> .collect(Collectors.joining(\", \")");
 
+        String resultStr1 = strList1.stream()
+                .map((x) -> {
+                    return x.toString();
+                })
+                .collect(Collectors.joining(", ", "[", "]"));
+        System.out.println(resultStr1);
 
+        // Better
+        String resultStr2 = strList1.stream()
+                .collect(Collectors.joining(", ", "[", "]"));
+        System.out.println(resultStr2);
 
+        System.out.println("---------- ---------- ---------- ---------- ----------");
 
+        System.out.println("Intermediate Operation (Non Terminal operation)");
 
+        List<String> list1 = new ArrayList<>(Arrays.asList("C1", "A5", "A4", "B1", "A3", "A1", "C2", "B2", "A2"));
 
+        System.out.println("Raw data");
+        System.out.println(list1);
 
+        System.out.println("---");
+        System.out.println("Sorted");
 
+        list1.stream()
+                .sorted()
+                .forEach(x -> System.out.print(x + ", "));
+        System.out.println();
+
+        System.out.println("---");
+        System.out.println("Sorted reverse ordered");
+
+        list1.stream()
+                .sorted((x, y) -> y.compareTo(x))
+                .forEach(x -> System.out.print(x + ", "));
+        System.out.println();
+
+        list1.stream()
+                .sorted(Comparator.reverseOrder())
+                .forEach(x -> System.out.print(x + ", "));
+        System.out.println();
+
+        System.out.println("----------");
+
+        System.out.println(".filter() for \"A\" || \"C\"\t\t\t---> C1, A5, A4, A3, A1, C2, A2");
+        System.out.println(".skip() the first 2 item        \t---> A4, A3, A1, C2, A2");
+        System.out.println(".map() to toLowerCase()         \t---> a4, a3, a1, c2, a2");
+        System.out.println(".sorted by reverseOrder()       \t---> c2, a4, a3, a2, a1");
+        System.out.println(".collect the data into List     \t---> c2, a4, a3, a2, a1");
+
+        List<String> filteredSorted = list1.stream()
+                .filter(x -> x.startsWith("A") || x.startsWith("C"))
+                .skip(2)
+                //.map(x -> x.toLowerCase())
+                .map(String::toLowerCase)
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+        System.out.println(filteredSorted);
+
+        System.out.println("---");
+        System.out.println("Look inside the implementations");
+
+        list1.stream()
+                .filter(x -> {
+                    System.out.println("---> filter: " + x);
+                    return x.startsWith("A") || x.startsWith("C");
+                })
+                .skip(2)
+                .map(x -> {
+                    System.out.println("---> map: " + x);
+                    return x.toLowerCase();
+                })
+                .sorted(Comparator.reverseOrder())
+                .forEach(x -> System.out.println("forEach: " + x));
+
+        System.out.println("----------");
+
+        System.out.println("list1");
+        System.out.println(list1);
+
+        System.out.println("list2");
+        List<String> list2 = new ArrayList<>(Arrays.asList("D2", "C2", "B3", "D1", "A2"));
+        System.out.println(list2);
+
+        System.out.println("Stream.concat(list1.stream(), list2.stream())");
+        System.out.println("list3");
+        List<String> list3 = Stream.concat(list1.stream(), list2.stream())
+                .collect(Collectors.toList());
+        System.out.println(list3);
+
+        System.out.println(".duplicate()");
+        System.out.println("list4");
+        List<String> list4 = list3.stream()
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println(list4);
+
+        System.out.println(".sorted()");
+        System.out.println("list5");
+        List<String> list5 = list4.stream()
+                .sorted()
+                .collect(Collectors.toList());
+        System.out.println(list5);
+
+        System.out.println("All in one");
+
+        Stream.concat(list1.stream(), list2.stream())
+                .distinct()
+                .sorted()
+                .forEach(s -> System.out.print(s + ", "));
+        System.out.println();
+
+        System.out.println("Do even more");
+
+        Stream.concat(list1.stream(), list2.stream())
+                .filter(s -> s.compareTo("C1") < 0)
+                .distinct()
+                .map(s -> s.toLowerCase())
+                .sorted()
+                .skip(2)
+                .forEach(s -> System.out.print(s + ", "));
+        System.out.println();
+
+        System.out.println("----------");
+        System.out.println("little example from Integer[]");
+
+        Integer[] arr = {10, 1, 3, 5, 11, 7, 9, 2, 4, 6, 8};
+        Arrays.stream(arr)
+                .skip(2)
+                .sorted()
+                .skip(2)
+                .forEach(x -> System.out.print(x + ", "));
+        System.out.println();
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
         System.out.println("IntStreams can replace the regular for loop");
@@ -237,8 +528,91 @@ public class Main {
         List<String> expression = Arrays.asList(ex.split(""));
         System.out.println(expression);
 
+        // This seems overkill
         IntStream.range(0, expression.size()).forEach(i -> System.out.print(expression.get(i) + ", "));
         System.out.println();
+
+        // Better?
+        expression.forEach(s -> System.out.print(s + ", "));
+        System.out.println();
+
+        System.out.println("---------- ---------- ---------- ---------- ----------");
+        System.out.println("User class");
+
+        List<User> users = new ArrayList<>();
+        users.add(new User(101, "Jeff", 34));
+        users.add(new User(102, "Bob", 31));
+        users.add(new User(103, "Nick", 38));
+        users.add(new User(104, "Joe", 44));
+        users.add(new User(105, "Brian", 28));
+
+        System.out.println(users);
+
+        System.out.println("---");
+
+        users.stream()
+                .sorted(Comparator.comparing(u -> u.getId()))
+                .forEach(u -> System.out.println(u));
+
+        System.out.println("---");
+
+        users.stream()
+                .sorted(Comparator.comparing(User::getName))
+                .forEach(u -> System.out.println(u));
+
+        System.out.println("---------- ---------- ---------- ---------- ----------");
+        System.out.println("Aggregate functions");
+
+        System.out.println(".reduce()");
+
+        Double[] doubleArr = {4.0, 5.0, 2.0, 3.0, 5.0};
+
+        double d1 = Stream.of(doubleArr)
+                .reduce(2.0, (x, y) -> x * y);
+        System.out.println(d1);
+
+        double d2 = Stream.of(doubleArr)
+                .reduce(2.0, (x, y) -> x + y);
+        System.out.println(d2);
+
+        System.out.println("----------");
+
+        System.out.println(".average()");
+
+        double d4 = Stream.of(doubleArr)
+                .mapToDouble(x -> x)
+                .average()
+                .orElse(0.0);
+        System.out.println(d4);
+
+        System.out.println("---");
+
+        OptionalDouble d5 = Stream.of(doubleArr)
+                .mapToDouble(x -> x)
+                .average();
+        System.out.println(d5);
+
+        System.out.println("----------");
+
+        System.out.println("DoubleStream, IntStream");
+
+        double[] primitiveArray1 = {4.0, 5.0, 2.0, 3.0, 5.0};
+        int[] primitiveArray2 = {5, 1, 3, 4, 3};
+
+        // Creating DoubleStream
+        DoubleStream doubleStream = DoubleStream.of(primitiveArray1);
+        IntStream intStream = IntStream.of(primitiveArray2);
+
+        double d6 = DoubleStream.of(primitiveArray1)
+                .average()
+                .orElse(0.0);
+        System.out.println(d6);
+
+        System.out.println("---");
+
+        OptionalDouble d7 = DoubleStream.of(primitiveArray1)
+                .average();
+        System.out.println(d7);
 
         System.out.println("----------");
 
