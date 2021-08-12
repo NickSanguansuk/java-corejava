@@ -13,16 +13,76 @@ public class Main {
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
 
-        System.out.println("forEach loop (internal loop)");
+        System.out.println("Loop through the list");
 
         List<String> nameList = new ArrayList<>(Arrays.asList("Larry", "Steve", "James", "Conan", "Ellen", "Smith"));
 
+        System.out.println("---> toString()");
+        System.out.println(nameList);
+
+        System.out.println("---");
+
+        System.out.println("---> List forEach() with method reference (Shortest)");
+        nameList.forEach(System.out::println);
+
+        System.out.println("---");
+
+        System.out.println("---> List forEach() (Best)");
+        // Collection.forEach() uses the collection's iterator (if one is specified).
+        // That means that the processing order of the items is defined.
         nameList.forEach(name -> System.out.print(name + ", "));
         System.out.println();
 
         System.out.println("---");
 
-        nameList.forEach(System.out::println);
+        System.out.println("---> Stream forEach()");
+        // In contrast, the processing order of Collection.stream().forEach() is undefined.
+        nameList.stream().forEach(name -> System.out.print(name + ", "));
+        System.out.println();
+
+        System.out.println("---");
+
+        System.out.println("---> Enhanced for loop");
+        for (String s : nameList) {
+            System.out.print(s + ", ");
+        }
+        System.out.println();
+
+        System.out.println("---");
+
+        System.out.println("---> Simple for loop");
+        for (int i = 0; i < nameList.size(); i++) {
+            System.out.print(nameList.get(i) + ", ");
+        }
+        System.out.println();
+
+        System.out.println("---");
+
+        System.out.println("---> while loop");
+        int count = 0;
+        while (count < nameList.size()) {
+            System.out.print(nameList.get(count) + ", ");
+            count++;
+        }
+        System.out.println();
+
+        System.out.println("---");
+
+        System.out.println("---> Iterator");
+        Iterator<String> itr = nameList.iterator();
+        while (itr.hasNext()) {
+            System.out.print(itr.next() + ", ");
+        }
+        System.out.println();
+
+        System.out.println("---");
+
+        System.out.println("---> ListIterator");
+        ListIterator<String> listItr = nameList.listIterator();
+        while (listItr.hasNext()) {
+            System.out.print(listItr.next() + ", ");
+        }
+        System.out.println();
 
         System.out.println("----------");
         System.out.println("stream() and forEach()");
@@ -496,7 +556,7 @@ public class Main {
                 .forEach(s -> System.out.print(s + ", "));
         System.out.println();
 
-        System.out.println("Do even more");
+        System.out.println("Do even more (Comment out the operations that want to test)");
 
         Stream.concat(list1.stream(), list2.stream())
                 .filter(s -> s.compareTo("C1") < 0)
@@ -504,6 +564,7 @@ public class Main {
                 .map(s -> s.toLowerCase())
                 .sorted()
                 .skip(2)
+                .limit(5)
                 .forEach(s -> System.out.print(s + ", "));
         System.out.println();
 
@@ -596,23 +657,44 @@ public class Main {
 
         System.out.println("DoubleStream, IntStream");
 
-        double[] primitiveArray1 = {4.0, 5.0, 2.0, 3.0, 5.0};
-        int[] primitiveArray2 = {5, 1, 3, 4, 3};
+        // java.util.stream.IntStream in Java 8, deals with primitive ints.
+        // It helps to solve the old problems like finding maximum value in array,
+        // finding minimum value in array, sum of all elements in array,
+        // and average of all values in array in a new way.
+
+        double[] doubles = {4.0, 5.0, 2.0, 3.0, 5.0};
+        int[] ints = {5, 1, 3, 4, 3};
 
         // Creating DoubleStream
-        DoubleStream doubleStream = DoubleStream.of(primitiveArray1);
-        IntStream intStream = IntStream.of(primitiveArray2);
+        DoubleStream doubleStream = DoubleStream.of(doubles);
+        IntStream intStream = IntStream.of(ints);
 
-        double d6 = DoubleStream.of(primitiveArray1)
+        double d6 = DoubleStream.of(doubles)
                 .average()
                 .orElse(0.0);
         System.out.println(d6);
 
         System.out.println("---");
 
-        OptionalDouble d7 = DoubleStream.of(primitiveArray1)
+        OptionalDouble d7 = DoubleStream.of(doubles)
                 .average();
         System.out.println(d7);
+
+        System.out.println("---");
+
+        OptionalDouble obj1 = IntStream.of(2, 3, 4, 5, 6, 7, 8)
+                .average();
+        System.out.println(obj1);
+
+        double d8 = obj1.getAsDouble();
+        System.out.println(d8);
+
+        System.out.println("---");
+
+        double d9 = IntStream.of(2, 3, 4, 5, 6, 7, 8)
+                .average()
+                .getAsDouble();
+        System.out.println(d9);
 
         System.out.println("----------");
 
