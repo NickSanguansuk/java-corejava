@@ -1,10 +1,10 @@
-package topics.concurrency_programming.demo2_syncronization;
+package topics.concurrency_programming.demo2_synchronized;
 
-public class SynchronizationExample1 extends Thread {
+public class SynchronizedExample1 extends Thread {
 
     private static int counter = 0;
 
-    public SynchronizationExample1(String name) {
+    public SynchronizedExample1(String name) {
         super(name);
     }
 
@@ -19,9 +19,9 @@ public class SynchronizationExample1 extends Thread {
     }
 
     public static void main(String[] args) {
-        SynchronizationExample1[] threads = new SynchronizationExample1[10];
+        SynchronizedExample1[] threads = new SynchronizedExample1[10];
         for (int i = 0; i < threads.length; i++) {
-            threads[i] = new SynchronizationExample1("Thread" + (i + 1));
+            threads[i] = new SynchronizedExample1("Thread" + (i + 1));
             threads[i].start();
         }
         for (int i = 0; i < threads.length; i++) {

@@ -1,10 +1,10 @@
-package topics.concurrency_programming.demo2_syncronization;
+package topics.concurrency_programming.demo2_synchronized;
 
-public class SynchronizationExample2 extends Thread {
+public class SynchronizedExample2 extends Thread {
 
     private static Integer counter = 0;
 
-    public SynchronizationExample2(String name) {
+    public SynchronizedExample2(String name) {
         super(name);
     }
 
@@ -12,7 +12,7 @@ public class SynchronizationExample2 extends Thread {
     public void run() {
         while (counter < 20) {
             System.out.println("---> [");
-            synchronized (SynchronizationExample2.class) {
+            synchronized (SynchronizedExample2.class) {
                 if (counter < 20) {
                     System.out.println(Thread.currentThread().getName() + " Before: " + counter);
                     counter++;
@@ -30,12 +30,12 @@ public class SynchronizationExample2 extends Thread {
     }
 
     public static void main(String[] args) {
-        SynchronizationExample2[] threads = new SynchronizationExample2[10];
+        SynchronizedExample2[] threads = new SynchronizedExample2[10];
         for (int i = 0; i < threads.length; i++) {
-            threads[i] = new SynchronizationExample2("Thread" + (i + 1));
+            threads[i] = new SynchronizedExample2("Thread-" + (i + 1));
             threads[i].start();
         }
-        for (SynchronizationExample2 thread : threads) {
+        for (SynchronizedExample2 thread : threads) {
             try {
                 thread.join();
             } catch (InterruptedException e) {

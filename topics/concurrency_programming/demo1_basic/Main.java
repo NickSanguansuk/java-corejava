@@ -32,7 +32,7 @@ public class Main {
         printInfo(Info.START);
 
         // Create and Start counterThread
-        Thread t_0 = new Thread(new CounterThread());
+        Thread t_0 = new Thread(new CounterThread(), "counter");
         t_0.start();
 
         // Create thread 1
@@ -40,8 +40,8 @@ public class Main {
         t_1.setName("t_1");
 
         // Create thread 2
-        Thread t_2 = new Thread(new ImplementsRunnable());
-        t_2.setName("t_2");
+        Thread t_2 = new Thread(new ImplementsRunnable(), "t_2");
+        //t_2.setName("t_2");
 
         // Print status ---> @ 0 s
         System.out.println(tInfo() + "t_1 State: " + t_1.getState());
@@ -77,8 +77,6 @@ public class Main {
         try {
             // main will wait for thread 2 to finish and join ---> @ 3 s
             t_2.join();
-            // main will wait for thread 1 to finish and join ---> @ 4 s
-            t_1.join();
         } catch (InterruptedException e) {
             System.out.println(tInfo() + e);
         }
@@ -88,5 +86,5 @@ public class Main {
         System.out.println(tInfo() + "t_2 State: " + t_2.getState());
 
         printInfo(Info.END);
-    } // main will be waiting for thread 1 to join here
+    } // main will be waiting for thread 1 to join here ---> @ 4 s
 }
