@@ -10,7 +10,7 @@ public class Main {
     public static String tInfo() {
         String tName = Thread.currentThread().getName();
 
-        return tName + " ---> ";
+        return String.format("%-4s ---> ", tName);
     }
 
     public static void printInfo(Info infoLocation) {
@@ -31,47 +31,62 @@ public class Main {
 
         printInfo(Info.START);
 
-        CounterThread counterThread = new CounterThread();
-        Thread t0 = new Thread(counterThread);
-        t0.start();
+        // Create and Start counterThread
+        Thread t_0 = new Thread(new CounterThread());
+        t_0.start();
 
-        ExtendsThread t1 = new ExtendsThread();
-        t1.setName("t1");
-        System.out.println(tInfo() + "Launch " + t1.getName());
-        t1.start();
+        // Create thread 1
+        ExtendsThread t_1 = new ExtendsThread();
+        t_1.setName("t_1");
 
-        ImplementsRunnable implementsRunnable2 = new ImplementsRunnable();
-        Thread t2 = new Thread(implementsRunnable2);
-        t2.setName("t2");
-        System.out.println(tInfo() + "Launch " + t2.getName());
-        t2.start();
+        // Create thread 2
+        Thread t_2 = new Thread(new ImplementsRunnable());
+        t_2.setName("t_2");
 
+        // Print status ---> @ 0 s
+        System.out.println(tInfo() + "t_1 State: " + t_1.getState());
+        System.out.println(tInfo() + "t_2 State: " + t_2.getState());
+
+        // Start thread 1 & 2
+        System.out.println(tInfo() + "Launch " + t_1.getName());
+        t_1.start();
+        System.out.println(tInfo() + "Launch " + t_2.getName());
+        t_2.start();
+
+        // Sleep 1 s
         try {
             Thread.sleep(1000 * 1);
         } catch (InterruptedException e) {
             System.out.println(tInfo() + e);
         }
 
-        System.out.println(tInfo() + "t1 State: " + t1.getState());
-        System.out.println(tInfo() + "t2 State: " + t2.getState());
+        // Print status ---> @ 1 s
+        System.out.println(tInfo() + "t_1 State: " + t_1.getState());
+        System.out.println(tInfo() + "t_2 State: " + t_2.getState());
 
+        // Sleep 1 s
         try {
             Thread.sleep(1000 * 1);
         } catch (InterruptedException e) {
             System.out.println(tInfo() + e);
         }
 
-        t2.interrupt();
+        // Interrupt thread 2 sleeping ---> @ 2 s
+        t_2.interrupt();
 
         try {
-            t2.join();
+            // main will wait for thread 2 to finish and join ---> @ 3 s
+            t_2.join();
+            // main will wait for thread 1 to finish and join ---> @ 4 s
+            t_1.join();
         } catch (InterruptedException e) {
             System.out.println(tInfo() + e);
         }
 
-        System.out.println(tInfo() + "t1 State: " + t1.getState());
-        System.out.println(tInfo() + "t2 State: " + t2.getState());
+        // Print status
+        System.out.println(tInfo() + "t_1 State: " + t_1.getState());
+        System.out.println(tInfo() + "t_2 State: " + t_2.getState());
 
         printInfo(Info.END);
-    } // main will be waiting for t1 to join here
+    } // main will be waiting for thread 1 to join here
 }
