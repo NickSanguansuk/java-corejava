@@ -1,4 +1,4 @@
-package topics.io_demo.nio_demo.demo_tutorialspoint;
+package topics.io_demo.nio_demo.demo2_tutorialspoint;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -22,8 +22,8 @@ public class CopyFile {
         // NOFOLLOW_LINKS   − If a file is a symbolic link, then the link itself, not the target of the link, is copied.
 
         // .copy()
-        Path sourceFile = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_tutorialspoint\\dataFile2a.txt");
-        Path targetFile = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_tutorialspoint\\dataFile2b.txt");
+        Path sourceFile = Paths.get("src\\topics\\io_demo\\nio_demo\\demo2_tutorialspoint\\dataFile2a.txt");
+        Path targetFile = Paths.get("src\\topics\\io_demo\\nio_demo\\demo2_tutorialspoint\\dataFile2b.txt");
 
         try {
             Files.copy(sourceFile, targetFile, StandardCopyOption.REPLACE_EXISTING);
@@ -33,7 +33,7 @@ public class CopyFile {
         }
 
         // .readAllLines()
-        Path wiki_path = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_tutorialspoint\\dataFile2b.txt");
+        Path wiki_path = Paths.get("src\\topics\\io_demo\\nio_demo\\demo2_tutorialspoint\\dataFile2b.txt");
         //Charset charset = Charset.forName("ISO-8859-1");
         Charset charset = StandardCharsets.ISO_8859_1;
 

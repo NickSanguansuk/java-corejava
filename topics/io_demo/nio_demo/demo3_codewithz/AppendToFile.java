@@ -1,17 +1,16 @@
-package topics.io_demo.nio_demo.demo_codewithz;
+package topics.io_demo.nio_demo.demo3_codewithz;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.List;
 
 public class AppendToFile {
 
     public static void main(String[] args) {
 
-        Path p1 = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_codewithz\\data_folder\\dataFile1.txt");
+        Path p1 = Paths.get("src\\topics\\io_demo\\nio_demo\\demo3_codewithz\\data_folder\\dataFile1.txt");
 
         try {
             String content = "Are you ready for learning a new thing?";

@@ -1,4 +1,4 @@
-package topics.io_demo.nio_demo.demo_tutorialspoint;
+package topics.io_demo.nio_demo.demo2_tutorialspoint;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -12,7 +12,7 @@ public class WriteFile_Others {
 
     public static void main(String[] args) {
 
-        Path path = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_tutorialspoint\\dataFile3.txt");
+        Path path = Paths.get("src\\topics\\io_demo\\nio_demo\\demo2_tutorialspoint\\dataFile3.txt");
         String question = "To be or not to be? What is the answer?";
         Charset charset = StandardCharsets.ISO_8859_1;
 

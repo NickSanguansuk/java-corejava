@@ -1,4 +1,4 @@
-package topics.io_demo.nio_demo.demo_tutorialspoint;
+package topics.io_demo.nio_demo.demo2_tutorialspoint;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -12,7 +12,7 @@ public class ReadFile {
 
     public static void main(String[] args) {
 
-        Path wiki_path = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_tutorialspoint\\dataFile2a.txt");
+        Path wiki_path = Paths.get("src\\topics\\io_demo\\nio_demo\\demo2_tutorialspoint\\dataFile2a.txt");
         Charset charset = StandardCharsets.ISO_8859_1;
         try {
             List<String> lines = Files.readAllLines(wiki_path, charset);

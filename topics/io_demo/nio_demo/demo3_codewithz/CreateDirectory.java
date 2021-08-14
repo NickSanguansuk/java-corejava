@@ -1,4 +1,4 @@
-package topics.io_demo.nio_demo.demo_codewithz;
+package topics.io_demo.nio_demo.demo3_codewithz;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,7 +17,7 @@ public class CreateDirectory {
         // 5. CopyFile
         // 6. AppendToFile
 
-        Path p = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_codewithz\\data_folder");
+        Path p = Paths.get("src\\topics\\io_demo\\nio_demo\\demo3_codewithz\\data_folder");
 
         try {
             if (Files.exists(p)) {

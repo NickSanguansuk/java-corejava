@@ -1,7 +1,6 @@
-package topics.io_demo.nio_demo.demo_codewithz;
+package topics.io_demo.nio_demo.demo3_codewithz;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,9 +12,9 @@ public class WriteToFile {
 
         // Need to delete files "dataFile1.txt" and "dataFile2.txt" first
 
-        Path p1 = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_codewithz\\data_folder\\dataFile1.txt");
-        Path pPoem = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_codewithz\\data_folder\\poem.txt");
-        Path p2 = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_codewithz\\data_folder\\dataFile2.txt");
+        Path p1 = Paths.get("src\\topics\\io_demo\\nio_demo\\demo3_codewithz\\data_folder\\dataFile1.txt");
+        Path pPoem = Paths.get("src\\topics\\io_demo\\nio_demo\\demo3_codewithz\\data_folder\\poem.txt");
+        Path p2 = Paths.get("src\\topics\\io_demo\\nio_demo\\demo3_codewithz\\data_folder\\dataFile2.txt");
 
         try {
 

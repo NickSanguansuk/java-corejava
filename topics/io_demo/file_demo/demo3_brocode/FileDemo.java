@@ -1,4 +1,4 @@
-package topics.io_demo.file_demo.demo_brocode;
+package topics.io_demo.file_demo.demo3_brocode;
 
 import java.io.File;
 
@@ -8,7 +8,7 @@ public class FileDemo {
 
         // File = An abstract representation of file and directory path names
 
-        String fileName = "src\\topics\\io_demo\\file_demo\\demo_brocode\\secret_message.txt";
+        String fileName = "src\\topics\\io_demo\\file_demo\\demo3_brocode\\secret_message.txt";
 
         System.out.println("----------");
 

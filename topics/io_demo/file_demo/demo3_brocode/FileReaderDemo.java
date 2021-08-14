@@ -1,4 +1,4 @@
-package topics.io_demo.file_demo.demo_brocode;
+package topics.io_demo.file_demo.demo3_brocode;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -16,7 +16,7 @@ public class FileReaderDemo {
 
         // search ---> ASCII Art Archive
 
-        String fileName = "src\\topics\\io_demo\\file_demo\\demo_brocode\\art.txt";
+        String fileName = "src\\topics\\io_demo\\file_demo\\demo3_brocode\\art.txt";
 
         System.out.println("----------");
 

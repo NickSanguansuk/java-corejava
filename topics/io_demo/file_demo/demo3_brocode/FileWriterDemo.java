@@ -1,4 +1,4 @@
-package topics.io_demo.file_demo.demo_brocode;
+package topics.io_demo.file_demo.demo3_brocode;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,7 +12,7 @@ public class FileWriterDemo {
         // FileWriter =
         //
 
-        String fileName = "src\\topics\\io_demo\\file_demo\\demo_brocode\\poem.txt";
+        String fileName = "src\\topics\\io_demo\\file_demo\\demo3_brocode\\poem.txt";
 
         System.out.println("----------");
 

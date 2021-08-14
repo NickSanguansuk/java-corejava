@@ -1,4 +1,4 @@
-package topics.io_demo.nio_demo.demo_tutorialspoint;
+package topics.io_demo.nio_demo.demo2_tutorialspoint;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,7 +13,7 @@ public class CreateFile {
         // Files class provides this method to create file using specified Path.
 
         // Initialize Path object
-        Path path = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_tutorialspoint\\dataFile1.txt");
+        Path path = Paths.get("src\\topics\\io_demo\\nio_demo\\demo2_tutorialspoint\\dataFile1.txt");
 
         // Create file
         try {

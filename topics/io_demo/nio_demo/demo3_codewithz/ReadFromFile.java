@@ -1,4 +1,4 @@
-package topics.io_demo.nio_demo.demo_codewithz;
+package topics.io_demo.nio_demo.demo3_codewithz;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,7 +12,7 @@ public class ReadFromFile {
 
         // Added some texts to the file first
 
-        Path p = Paths.get("src\\topics\\io_demo\\nio_demo\\demo_codewithz\\data_folder\\poem.txt");
+        Path p = Paths.get("src\\topics\\io_demo\\nio_demo\\demo3_codewithz\\data_folder\\poem.txt");
 
         try {
             List<String> lineData = Files.readAllLines(p);
