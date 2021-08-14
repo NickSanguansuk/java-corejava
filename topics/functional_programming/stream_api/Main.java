@@ -185,7 +185,7 @@ public class Main {
         System.out.println();
 
         System.out.println("---");
-        System.out.println("Stream.of() method");
+        System.out.println("Stream.of() method ---> return Stream<T>");
 
         Stream<Integer> stream1 = Stream.of(1, 2, 3, 4, 5);
         Stream<String> stream2 = Stream.of("Bat", "Cat", "Rat");
@@ -201,11 +201,15 @@ public class Main {
         System.out.println("---");
         System.out.println("Create Stream from Array");
 
+        int[] intArrPri = {1, 2, 3, 4, 5};
         Integer[] intArr = {4, 1, 3, 8, 5, 2, 7, 9, 6};     // Need to be Integer[] (not int[])
         String[] strArr = {"ABC", "DEF", "GHI", "JKL", "MNO", "PQR"};
 
-        Stream<Integer> streamInt1 = Stream.of(intArr);
-        Stream<Integer> streamInt2 = Arrays.stream(intArr);
+        IntStream streamIntPri1 = IntStream.of(intArrPri); // return IntStream
+        IntStream streamIntPri2 = Arrays.stream(intArrPri); // return IntStream
+
+        Stream<Integer> streamInt1 = Stream.of(intArr); // return Stream<T>
+        Stream<Integer> streamInt2 = Arrays.stream(intArr); // return Stream<T>
 
         Stream<String> streamStr1 = Stream.of(strArr);
         Stream<String> streamStr2 = Arrays.stream(strArr);

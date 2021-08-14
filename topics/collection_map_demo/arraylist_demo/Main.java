@@ -2,6 +2,8 @@ package topics.collection_map_demo.arraylist_demo;
 
 import java.io.FileNotFoundException;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -46,6 +48,41 @@ public class Main {
         System.out.println(list2);
         System.out.println(list3);
         System.out.println(list4);
+
+        System.out.println("Warning ---> cannot use Arrays.asList() to convert int[] to List<Integer>");
+        int[] arr1 = {1, 2, 3};
+        Integer[] arr2 = {1, 2, 3};
+        // arr1
+        //List<Integer> listArr1a = new ArrayList<>(Arrays.asList(arr1));  // This is Compile Error
+        List<Integer> listArr1a = new ArrayList<Integer>(arr1.length);
+        for (int i : arr1)
+        {
+            listArr1a.add(i);
+        }
+        List<Integer> listArr1b = Arrays.stream(arr1).boxed().collect(Collectors.toList()); // Need to boxed()
+        // arr2
+        List<Integer> listArr2a = new ArrayList<>(Arrays.asList(arr2)); // This is fine
+        List<Integer> listArr2b = new ArrayList<>(List.of(arr2)); // This is fine
+        List<Integer> listArr2c = Arrays.stream(arr2).collect(Collectors.toList());
+
+        System.out.println(listArr1a);
+        System.out.println(listArr1b);
+        System.out.println(listArr2a);
+        System.out.println(listArr2b);
+        System.out.println(listArr2c);
+
+        System.out.println("Warning ---> the list return by List.of() is immutable");
+        // However, if we convert the list to ArrayList, both are fine
+        // "new ArrayList<>(List.of(arr2));"
+
+        List<Integer> listArr2x = Arrays.asList(arr2);
+        List<Integer> listArr2y = List.of(arr2);
+
+        listArr2x.set(1, 200); // This is fine
+        //listArr2y.set(1, 200); // This is bad, Run-time error
+
+        System.out.println(listArr2x);
+        System.out.println(listArr2y);
 
         System.out.println("ArrayList");
         List<Integer> list3_new = new ArrayList<>(list3);
