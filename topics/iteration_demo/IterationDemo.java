@@ -39,7 +39,7 @@ public class IterationDemo {
             }
 
             String star = "*";
-            for(int i = 0; i < 5; i++) {
+            for (int i = 0; i < 5; i++) {
                 System.out.println(star);
                 star += " *";
             }
@@ -50,7 +50,7 @@ public class IterationDemo {
             //       5 4
             //         5
             for (int i = 0; i < 5; i++) {
-
+                // ToDo
             }
 
             Scanner scanner = new Scanner(System.in);
@@ -97,6 +97,6 @@ public class IterationDemo {
         }
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
-        
+
     }
 }
