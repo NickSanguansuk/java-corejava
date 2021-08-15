@@ -44,8 +44,9 @@ public class SplitDemo {
         } catch (FileNotFoundException e) {
             System.out.println("Exception occurred: " + e);
         } finally {
+            assert scanner != null;
             scanner.close();
         }
-        
+
     }
 }
