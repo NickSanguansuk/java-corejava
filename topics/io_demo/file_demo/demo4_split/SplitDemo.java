@@ -41,15 +41,11 @@ public class SplitDemo {
                 System.out.println(Arrays.toString(itemInfo));
             }
 
-
-
-
         } catch (FileNotFoundException e) {
             System.out.println("Exception occurred: " + e);
         } finally {
             scanner.close();
         }
-
-
+        
     }
 }
