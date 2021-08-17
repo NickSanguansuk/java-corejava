@@ -13,6 +13,9 @@ public class ExtendsThread extends Thread {
         //int time = (int)(Math.random() * 3) + 1;
         //System.out.println(time);
 
+        System.out.println(Main.tInfo() + "do.....");
+        System.out.println(Main.tInfo() + "do.....");
+
         try {
             Thread.sleep(1000 * 4);
         } catch (InterruptedException e) {
@@ -20,7 +23,6 @@ public class ExtendsThread extends Thread {
             //return;
         }
 
-        System.out.println(Main.tInfo() + "do.....");
         System.out.println(Main.tInfo() + "do.....");
         System.out.println(Main.tInfo() + "do.....");
 

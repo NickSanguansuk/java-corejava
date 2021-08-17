@@ -27,31 +27,58 @@ public class Main {
         }
     }
 
+    public static void printStatus(Thread main, Thread t_1, Thread t_2, Thread t_3, Thread t_4) {
+        System.out.println(tInfo() + "Print mainState: " + main.getState() + ", " + main.isAlive());
+        System.out.println(tInfo() + "Print t_1 State: " + t_1.getState() + ", " + t_1.isAlive());
+        System.out.println(tInfo() + "Print t_2 State: " + t_2.getState() + ", " + t_2.isAlive());
+        System.out.println(tInfo() + "Print t_3 State: " + t_3.getState() + ", " + t_3.isAlive());
+        System.out.println(tInfo() + "Print t_4 State: " + t_4.getState() + ", " + t_4.isAlive());
+    }
+
     public static void main(String[] args) {
 
         printInfo(Info.START);
+        Thread main = Thread.currentThread();
+
+        System.out.println(tInfo() + Thread.activeCount());
 
         // Create and Start counterThread
-        Thread t_0 = new Thread(new CounterThread(), "counter");
-        t_0.start();
+        Thread t_c = new Thread(new CounterThread(), "t_c");
+        t_c.start();
+        //System.out.println(tInfo() + t_c.isDaemon());
+        //t_c.setDaemon(false);
+        //System.out.println(tInfo() + t_c.isDaemon());
 
         // Create thread 1
         ExtendsThread t_1 = new ExtendsThread();
+        t_1.setPriority(Thread.MAX_PRIORITY); // 10
         t_1.setName("t_1");
 
         // Create thread 2
         Thread t_2 = new Thread(new ImplementsRunnable(), "t_2");
+        t_2.setPriority(Thread.MIN_PRIORITY); // 1
         //t_2.setName("t_2");
 
+        // Create thread 3
+        Thread t_3 = new Thread(new SecretRoom(), "t_3");
+
+        // Create thread 4
+        Thread t_4 = new Thread(new SecretRoom(), "t_4");
+
         // Print status ---> @ 0 s
-        System.out.println(tInfo() + "t_1 State: " + t_1.getState());
-        System.out.println(tInfo() + "t_2 State: " + t_2.getState());
+        printStatus(main, t_1, t_2, t_3, t_4);
 
         // Start thread 1 & 2
         System.out.println(tInfo() + "Launch " + t_1.getName());
         t_1.start();
         System.out.println(tInfo() + "Launch " + t_2.getName());
         t_2.start();
+        System.out.println(tInfo() + "Launch " + t_3.getName());
+        t_3.start();
+        System.out.println(tInfo() + "Launch " + t_4.getName());
+        t_4.start();
+
+        //System.out.println(1 / 0);
 
         // Sleep 1 s
         try {
@@ -61,8 +88,7 @@ public class Main {
         }
 
         // Print status ---> @ 1 s
-        System.out.println(tInfo() + "t_1 State: " + t_1.getState());
-        System.out.println(tInfo() + "t_2 State: " + t_2.getState());
+        printStatus(main, t_1, t_2, t_3, t_4);
 
         // Sleep 1 s
         try {
@@ -81,9 +107,8 @@ public class Main {
             System.out.println(tInfo() + e);
         }
 
-        // Print status
-        System.out.println(tInfo() + "t_1 State: " + t_1.getState());
-        System.out.println(tInfo() + "t_2 State: " + t_2.getState());
+        // Print status ---> @ 3 s
+        printStatus(main, t_1, t_2, t_3, t_4);
 
         printInfo(Info.END);
     } // main will be waiting for thread 1 to join here ---> @ 4 s

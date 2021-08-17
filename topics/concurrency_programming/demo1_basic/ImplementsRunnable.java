@@ -13,6 +13,9 @@ public class ImplementsRunnable implements Runnable {
         //int time = (int)(Math.random() * 3) + 1;
         //System.out.println(time);
 
+        System.out.println(Main.tInfo() + "do.....");
+        System.out.println(Main.tInfo() + "do.....");
+
         try {
             Thread.sleep(1000 * 3);
         } catch (InterruptedException e) {
@@ -22,7 +25,6 @@ public class ImplementsRunnable implements Runnable {
 
         System.out.println(Main.tInfo() + "do.....");
         System.out.println(Main.tInfo() + "do.....");
-        System.out.println(Main.tInfo() + "do.....");
 
         try {
             Thread.sleep(1000 * 1);
@@ -30,6 +32,9 @@ public class ImplementsRunnable implements Runnable {
             System.out.println(Main.tInfo() + e);
             //return;
         }
+
+        System.out.println(Main.tInfo() + "do.....");
+        System.out.println(Main.tInfo() + "do.....");
 
         Main.printInfo(Main.Info.END);
     }
