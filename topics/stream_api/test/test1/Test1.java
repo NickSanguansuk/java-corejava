@@ -1,4 +1,4 @@
-package topics.stream_api.test;
+package topics.stream_api.test.test1;
 
 public class Test1 {
 

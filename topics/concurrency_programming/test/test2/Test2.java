@@ -1,15 +1,14 @@
 package topics.concurrency_programming.test.test2;
 
-public class Main extends Thread {
+public class Test2 extends Thread {
 
     public void run() {
         System.out.println("The run method was called");
-
     }
 
     public static void main(String[] args) {
 
-        Main myThread = new Main();
+        Test2 myThread = new Test2();
         myThread.start();
         System.out.println(myThread.getState());
     }

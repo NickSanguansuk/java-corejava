@@ -1,4 +1,4 @@
-package topics.stream_api;
+package topics.stream_api.demo1;
 
 public class User {
 

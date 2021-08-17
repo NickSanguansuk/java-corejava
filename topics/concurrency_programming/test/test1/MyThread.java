@@ -1,4 +1,4 @@
-package topics.concurrency_programming.test;
+package topics.concurrency_programming.test.test1;
 
 public class MyThread extends Thread {
 
@@ -11,6 +11,5 @@ public class MyThread extends Thread {
 
         }
     }
-
 
 }

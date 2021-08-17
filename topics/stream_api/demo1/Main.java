@@ -1,4 +1,4 @@
-package topics.stream_api;
+package topics.stream_api.demo1;
 
 import java.io.File;
 import java.util.*;
@@ -305,7 +305,7 @@ public class Main {
 
         System.out.println("----------");
         // Finding all sub-directory names in a directory
-        String dirName = "src\\topics\\functional_programming";
+        String dirName = "src\\topics\\stream_api";
 
         System.out.println("Old");
         List<String> allDirNames1 = new ArrayList<>();
