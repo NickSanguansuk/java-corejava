@@ -1,10 +1,10 @@
 package topics.concurrency_programming.demo1_basic;
 
-public class SecretRoom implements Runnable {
+public class SecretRoomThread implements Runnable {
 
     public static void doSomethingInSecretRoom() {
         System.out.println(Main.tInfo() + "SecretRoom [");
-        synchronized (SecretRoom.class) {
+        synchronized (SecretRoomThread.class) {
 
             System.out.println(Main.tInfo() + "do.....(secret)");
             System.out.println(Main.tInfo() + "do.....(secret)");

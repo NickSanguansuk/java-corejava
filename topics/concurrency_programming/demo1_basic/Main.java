@@ -44,10 +44,10 @@ public class Main {
 
         // Create and Start counterThread
         Thread t_c = new Thread(new CounterThread(), "t_c");
+        System.out.println(tInfo() + t_c.isDaemon());
+        t_c.setDaemon(true);
+        System.out.println(tInfo() + t_c.isDaemon());
         t_c.start();
-        //System.out.println(tInfo() + t_c.isDaemon());
-        //t_c.setDaemon(false);
-        //System.out.println(tInfo() + t_c.isDaemon());
 
         // Create thread 1
         ExtendsThread t_1 = new ExtendsThread();
@@ -60,10 +60,10 @@ public class Main {
         //t_2.setName("t_2");
 
         // Create thread 3
-        Thread t_3 = new Thread(new SecretRoom(), "t_3");
+        Thread t_3 = new Thread(new SecretRoomThread(), "t_3");
 
         // Create thread 4
-        Thread t_4 = new Thread(new SecretRoom(), "t_4");
+        Thread t_4 = new Thread(new SecretRoomThread(), "t_4");
 
         // Print status ---> @ 0 s
         printStatus(main, t_1, t_2, t_3, t_4);

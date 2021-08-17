@@ -3,6 +3,7 @@ package topics.concurrency_programming.demo5_wait_notify;
 public class Withdraw implements Runnable {
 
     private Bank bank;
+
     public Withdraw(Bank bank) {
         this.bank = bank;
     }
@@ -16,8 +17,10 @@ public class Withdraw implements Runnable {
                         String message = "Account overdrawn.  Balance " + bank.getBalance() + " < Withdraw amount " + amount + "; waiting for deposit...";
                         System.out.println(message);
                         bank.wait();
+                        System.out.println("Got notify");
                     }
                 } catch (Exception e) {
+                    System.out.println(e);
                 }
             }
             bank.subtractAmount(amount);
@@ -27,6 +30,6 @@ public class Withdraw implements Runnable {
 
     @Override
     public void run() {
-        withdrawalAmount(2000);
+        withdrawalAmount(5000);
     }
 }

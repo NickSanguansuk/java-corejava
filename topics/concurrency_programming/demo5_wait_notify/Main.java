@@ -19,11 +19,11 @@ public class Main {
         t1.start();
 
         Deposit c1 = new Deposit(bank);
-        Thread t2 = new Thread(c1, "Deposit Thread");
+        Thread t2 = new Thread(c1, "Deposit Thread 1");
         t2.start();
 
         Deposit c2 = new Deposit(bank);
-        Thread t3 = new Thread(c2, "Deposit Thread");
+        Thread t3 = new Thread(c2, "Deposit Thread 2");
         t3.start();
 
         System.out.println("main is done");
