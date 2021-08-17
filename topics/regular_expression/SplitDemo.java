@@ -37,6 +37,9 @@ public class SplitDemo {
                 String line = scanner.nextLine();
 
                 String[] itemInfo = line.split("\\s ");
+                //String[] itemInfo = line.split("\\s{2}");
+                //String[] itemInfo = line.split("\\s\\s");
+                //String[] itemInfo = line.split("  ");
                 System.out.println(itemInfo.length);
                 System.out.println(Arrays.toString(itemInfo));
             }

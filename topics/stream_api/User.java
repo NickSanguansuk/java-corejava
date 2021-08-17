@@ -1,4 +1,4 @@
-package topics.functional_programming.stream_api;
+package topics.stream_api;
 
 public class User {
 

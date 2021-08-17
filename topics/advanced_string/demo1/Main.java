@@ -1,4 +1,4 @@
-package topics.advanced_string;
+package topics.advanced_string.demo1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
