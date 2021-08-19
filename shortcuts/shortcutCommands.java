@@ -14,7 +14,12 @@ public class shortcutCommands {
 
         System.out.println("Alt+1			---> Open/Close the Project window");
 
-        System.out.println("Alt+Insert 		---> Create constructor, toString(), ...");
+        System.out.println("Alt+Insert 		---> Generate constructor, getters, setters, toString(), ...");
+        System.out.println("Alt+Enter       ---> Show context actions for injecting language or reference, ...");
+
+        System.out.println("Ctrl+E          ---> To choose what page to work on");
+        System.out.println("double Shift    ---> To choose tool windows to work on, for example, Persistence, ..."); 
+
         System.out.println("Ctrl+/			---> Line comment");
         System.out.println("Ctrl+Shift+/	---> Block comment");
 
@@ -25,8 +30,6 @@ public class shortcutCommands {
         System.out.println("Alt+Shift+F10   ---> To choose what to run");
         System.out.println("Shift+F9	    ---> Debug");
         System.out.println("Ctrl+F2         ---> Stop (stop the running)");
-
-        System.out.println("Ctrl+E          ---> To choose what page to work on");
 
         System.out.println("F9              ---> Debug: Resume program (Important)");
         System.out.println("F8              ---> Debug: Step over");
