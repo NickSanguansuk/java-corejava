@@ -19,6 +19,7 @@ public class shortcutCommands {
 
         System.out.println("Ctrl+E          ---> To choose what page to work on");
         System.out.println("double Shift    ---> To choose tool windows to work on, for example, Persistence, ...");
+        System.out.println("Ctrl+Shift+T    ---> To navigate between the test and the code");
 
         System.out.println("Ctrl+/			---> Line comment");
         System.out.println("Ctrl+Shift+/	---> Block comment");
