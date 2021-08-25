@@ -1,5 +1,11 @@
 package topics.basic_demo.math_string;
 
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.RandomUtils;
+
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class MathStringDemo {
     // Core Java - Math, Character, String
 
@@ -390,6 +396,44 @@ public class MathStringDemo {
             // Generate random number between 60 - 99;
             int random60to99 = (int)(Math.random() * 40) + 60;
             System.out.println("Random integer 60 - 99: " + random60to99);
+        }
+
+        System.out.println("---------- ---------- ---------- ---------- ----------");
+
+        {
+            int min = 6;
+            int max = 10;
+
+            System.out.println("Generate random number 6 to 10 ---> java.util.Random");
+
+            Random rand = new Random();
+            int rand1 = min + rand.nextInt(max - min + 1);
+            System.out.println(rand1);
+
+            int rand2 = min + (int)(rand.nextDouble() * (max - min + 1));
+            System.out.println(rand2);
+
+            System.out.println("Generate random number 6 to 10 ---> Math.random()");
+            int rand3 = min + (int)(Math.random() * (max - min + 1));
+            System.out.println(rand3);
+
+            System.out.println("Generate random number 6 to 10 ---> ThreadLocalRandom");
+            int rand4 = ThreadLocalRandom.current().nextInt(6, 11);
+            System.out.println(rand4);
+
+            System.out.println("----------");
+
+            System.out.println("Generate random number length 5 ---> Apache Commons Lang API");
+            //http://commons.apache.org/
+            String randIntString = RandomStringUtils.randomNumeric(5);
+            System.out.println(randIntString);
+            int rand5 = Integer.parseInt(randIntString);
+            System.out.println(rand5);
+
+            System.out.println("Generate random String length 5 ---> Apache Commons Lang API");
+            String randStr1 = RandomStringUtils.randomAlphabetic(5);
+            System.out.println(randStr1);
+
         }
 
         System.out.println("---------- ---------- ---------- ---------- ----------");
