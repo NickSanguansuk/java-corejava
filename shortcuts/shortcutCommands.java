@@ -24,6 +24,8 @@ public class shortcutCommands {
         System.out.println("Ctrl+/			---> Line comment");
         System.out.println("Ctrl+Shift+/	---> Block comment");
 
+        System.out.println("Ctrl+Shift+V    ---> To choose items from clipboard to paste");
+
         System.out.println("Ctrl+Alt+L 		---> Re-format codes");
 
         System.out.println("Ctrl+Shift+F10	---> Run (First run)");
