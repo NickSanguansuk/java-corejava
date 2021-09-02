@@ -21,6 +21,12 @@ public class shortcutCommands {
         System.out.println("double Shift    ---> To choose tool windows to work on, for example, Persistence, ...");
         System.out.println("Ctrl+Shift+T    ---> To navigate between the test and the code");
 
+        System.out.println("Alt+F7			---> Find all usages");
+        System.out.println("Ctrl+B 			---> Goto declaration and usage");
+        System.out.println("Ctrl+Alt+B 		---> Goto implementation");
+
+        System.out.println("Ctrl+Shift+F    ---> Find");
+
         System.out.println("Ctrl+/			---> Line comment");
         System.out.println("Ctrl+Shift+/	---> Block comment");
 
@@ -40,12 +46,6 @@ public class shortcutCommands {
         System.out.println("Alt+Shift+F7    ---> Debug: (Force) Step into");
         System.out.println("Shift+F8        ---> Debug: Step out");
         System.out.println("Alt+F9          ---> Debug: Run to cursor");
-
-        System.out.println("Alt+F7			---> Find all usages");
-        System.out.println("Ctrl+B 			---> Goto declaration and usage");
-        System.out.println("Ctrl+Alt+B 		---> Goto implementation");
-
-        System.out.println("Ctrl+Shift+F    ---> Find");
 
         System.out.println();
         System.out.println("---------- ---------- ---------- ---------- ----------");
