@@ -59,6 +59,7 @@ public class ConditionalDemo {
         System.out.println("---------- ---------- ---------- ---------- ----------");
 
         {
+            System.out.println("switch");
             // switch
 
             // break statement is used to terminate the switch-case statement.
