@@ -62,7 +62,9 @@ public class shortcutCommands {
         System.out.println("Ctrl+/			---> Line comment");
         System.out.println("	            ---> Block comment");
 
-        System.out.println("Ctrl+Alt+F 		---> Auto format");
+        System.out.println("Ctrl+Shift+F 	---> Auto format");
+
+        System.out.println("Ctrl+Shift+O 	---> Auto import");
 
         System.out.println("Ctrl+F11	    ---> Run");
 
@@ -74,6 +76,5 @@ public class shortcutCommands {
         System.out.println("---------- ---------- ---------- ---------- ----------");
 
         
-
     }
 }
