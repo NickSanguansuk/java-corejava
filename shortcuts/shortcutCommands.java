@@ -75,6 +75,6 @@ public class shortcutCommands {
         System.out.println();
         System.out.println("---------- ---------- ---------- ---------- ----------");
 
-        
+
     }
 }
