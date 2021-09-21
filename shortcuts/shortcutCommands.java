@@ -13,6 +13,7 @@ public class shortcutCommands {
         System.out.println("To ignore the autocomplete, press Space.");
 
         System.out.println("Alt+1			---> Open/Close the Project window");
+        System.out.println("Alt+4			---> Open/Close the Run window");
 
         System.out.println("Alt+Insert 		---> Generate constructor, getters, setters, toString(), ...");
         System.out.println("Alt+Enter       ---> Show context actions for injecting language or reference, ...");
