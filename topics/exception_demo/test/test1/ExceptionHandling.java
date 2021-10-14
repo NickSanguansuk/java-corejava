@@ -1,4 +1,4 @@
-package topics.exception_demo.test;
+package topics.exception_demo.test.test1;
 
 // - A
 // - Runtime error

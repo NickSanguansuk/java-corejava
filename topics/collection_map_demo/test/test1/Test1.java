@@ -1,4 +1,4 @@
-package topics.collection_map_demo.test;
+package topics.collection_map_demo.test.test1;
 
 public class Test1 {
 

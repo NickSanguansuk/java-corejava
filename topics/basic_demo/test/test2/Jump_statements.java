@@ -1,4 +1,4 @@
-package topics.basic_demo.test;
+package topics.basic_demo.test.test2;
 
 // - 2 4 6 8
 // - 1 3 5 7 9
