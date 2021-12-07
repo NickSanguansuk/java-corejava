@@ -18,6 +18,8 @@ public class ReadFile_BufferedInputStream_Read {
 
         File file = new File(fileName);
         FileInputStream fileInputStream = new FileInputStream(file);
+        // or
+        //FileInputStream fileInputStream = new FileInputStream(fileName);
 
         try (BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream)) {
             long startTime = System.currentTimeMillis();
