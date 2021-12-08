@@ -22,13 +22,12 @@ public class IOStreamDemo {
         String fileName3 = "src/topics/file_system/io_demo/demo1_infosys/ReadFile.txt";
         String fileName4 = "src/topics/file_system/io_demo/demo1_infosys/WriteFile.txt";
 
-        //try(FileOutputStream outFile = new FileOutputStream("OutFile.txt");
+        //try (FileOutputStream outFile = new FileOutputStream("OutFile.txt");
         //    FileInputStream inFile = new FileInputStream("InFile.txt");) {
-        try(FileOutputStream outFile = new FileOutputStream(fileName1);
-            FileInputStream inFile = new FileInputStream(fileName2);
-            Reader readFile = new FileReader(fileName3);
-            Writer writeFile = new FileWriter(fileName4);
-            ) {
+        try (FileOutputStream outFile = new FileOutputStream(fileName1);
+             FileInputStream inFile = new FileInputStream(fileName2);
+             Reader readFile = new FileReader(fileName3);
+             Writer writeFile = new FileWriter(fileName4);) {
 
             // Byte Stream
             int value = inFile.read();
