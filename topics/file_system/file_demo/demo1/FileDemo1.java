@@ -46,11 +46,15 @@ public class FileDemo1 {
         String fileName = "src\\topics\\file_system\\file_demo\\demo1\\dataFile1.txt";
         //String fileName = "src\\topics\\file_demo\\demo1\\dataFile2.txt";
 
-        System.out.println(fileName);
+        String directoryName = "src\\topics\\file_system\\file_demo\\demo1\\output_files";
+        String directoryName2 = "src\\topics\\file_system\\file_demo\\demo1\\dummy_directory";
 
-        File file = new File(fileName);
+        System.out.println(fileName);
+        System.out.println(directoryName);
 
         System.out.println("----------");
+
+        File file = new File(fileName);
 
         System.out.println(file.isAbsolute());
         System.out.println(file.getAbsolutePath()); // useful
@@ -58,9 +62,16 @@ public class FileDemo1 {
 
         if (file.exists()) {
             System.out.println("File is found");
+
+            System.out.println("Name of the file: " + file.getName());
+            System.out.println("Path of the file: " + file.getParent());
             System.out.println("Is the file writable: " + file.canWrite());
             System.out.println("Is the file readable: " + file.canRead());
             System.out.println("File length: " + file.length());
+
+            System.out.println("isFile: " + file.isFile());
+            System.out.println("isDirectory: " + file.isDirectory());
+            System.out.println("list: " + file.list());
 
         } else {
             System.out.println("File is not found");
@@ -75,6 +86,15 @@ public class FileDemo1 {
                 System.out.println("-catch block-");
                 System.out.println(e);
             }
+        }
+
+        System.out.println("----------");
+
+        File dir = new File(directoryName);
+        System.out.println("isDirectory: " + dir.isDirectory());
+        String[] fileNames = dir.list();
+        for (String name : fileNames) {
+            System.out.println(name);
         }
 
         System.out.println("----------");
