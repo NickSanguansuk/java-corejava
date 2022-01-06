@@ -1,7 +1,6 @@
-package topics.basic_demo.math_string;
+package topics.basic_demo.demo2_math_string;
 
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.RandomUtils;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
