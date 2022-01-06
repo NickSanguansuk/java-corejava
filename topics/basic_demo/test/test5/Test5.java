@@ -1,18 +1,12 @@
 package topics.basic_demo.test.test5;
 
-// you can also use imports, for example:
-// import java.util.*;
-
-// you can write to stdout for debugging purposes, e.g.
-// System.out.println("this is a debug message");
-
 public class Test5 {
     public int solution(String S) {
         // write your code in Java SE 11
 
         int len = S.length();
-        int repairedIndex = -3;
         int numRepaired = 0;
+        int repairedIndex = -3;
 
         for (int i = 0; i < len; i++) {
             if ((S.charAt(i) == 'X') && (i - repairedIndex > 2)) {
