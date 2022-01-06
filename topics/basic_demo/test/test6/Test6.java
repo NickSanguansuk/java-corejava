@@ -22,7 +22,5 @@ public class Test6 {
         int[] a1 = {1, 1, 0, 1, 1}; // 2
         int numFlipped1 = test6.solution(a1);
         System.out.println(numFlipped1);
-
-
     }
 }
