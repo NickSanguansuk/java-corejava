@@ -8,10 +8,12 @@ public class Test6 {
         int numFlipped = 0;
 
         for (int i = 0; i < len; i++) {
-
+            if (i % 2 != A[i]) {
+                numFlipped++;
+            }
         }
 
-        return 0;
+        return numFlipped <= (len / 2) ? numFlipped : len - numFlipped;
     }
 
     public static void main(String[] args) {
