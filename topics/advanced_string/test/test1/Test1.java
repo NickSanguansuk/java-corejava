@@ -1,4 +1,4 @@
-package topics.advanced_string.test;
+package topics.advanced_string.test.test1;
 
 public class Test1 {
 
