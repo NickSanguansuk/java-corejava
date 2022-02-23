@@ -27,8 +27,8 @@ public class Demo01 {
             System.out.println(doubleIntegerVal);
             System.out.println("---");
 
-            int k1 = (int) 2147483648.0;
-            int k2 = (int) 10000000000.0;
+            int k1 = (int) 2147483648.0; // Integer.MAX_VALUE
+            int k2 = (int) 10000000000.0; // Integer.MAX_VALUE
             System.out.println(k1);
             System.out.println(k2);
             System.out.println("---");
@@ -61,14 +61,6 @@ public class Demo01 {
         }
         System.out.println("---------- ---------- ---------- ---------- ----------");
         {
-            // Pre & Post, Increment & Decrement
-            int x = 5;
-            int y = x++ + 5;
-            System.out.println(x);
-            System.out.println(y);
-        }
-        System.out.println("---------- ---------- ---------- ---------- ----------");
-        {
             // String Constant Pool
             String strA = "1";
             String strB = strA + "2";
@@ -78,6 +70,8 @@ public class Demo01 {
 
             final String strAA = "1";
             String strBB = strAA + "2";
+
+            String strBBB = new String("12");
 
             System.out.println(strB.equals("12"));
             System.out.println(strB == "12");
@@ -91,8 +85,46 @@ public class Demo01 {
             System.out.println(strBB == strC);
             System.out.println(strBB == strD);
             System.out.println("---");
+            System.out.println(strBBB.equals("12"));
+            System.out.println(strBBB == "12");
+            System.out.println(strBBB.intern() == "12");
+            System.out.println(strBBB == strC);
+            System.out.println(strBBB == strD);
+            System.out.println("---");
             System.out.println(strA == strAA);
             System.out.println(strC == strD);
+        }
+        System.out.println("---------- ---------- ---------- ---------- ----------");
+        {
+            // Pre & Post, Increment & Decrement
+            int x = 5;
+            int y = x++ + 5;
+            System.out.println(x);
+            System.out.println(y);
+        }
+        System.out.println("---------- ---------- ---------- ---------- ----------");
+        {
+            // Arithmetic operators
+            // +, -, *, /, %,                   ++, --
+
+            // Assignment operators
+            // =, +=, -=, *=, /=, %=,           &=, |=, ^=, >>=, <<=
+
+            // Comparison (Relational) operators
+            // ==, !=, >, <, >=, <=
+
+            // Logical operators
+            // &&, ||, !
+
+            // Unary operators
+            // +, -, ++, --, !
+
+            // Bitwise operators
+            // ~, <<, >>, >>>, &, ^
+            System.out.println(5 & 6);
+            System.out.println(5 | 6);
+            System.out.println(5 ^ 6);
+
         }
         System.out.println("---------- ---------- ---------- ---------- ----------");
         {
