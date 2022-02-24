@@ -1,4 +1,4 @@
-package exercises.training_bfs.week1.day2;
+package trainings.bfs.week1.day2.hw;
 
 import java.util.Objects;
 

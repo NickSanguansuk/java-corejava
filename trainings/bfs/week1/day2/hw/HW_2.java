@@ -1,6 +1,4 @@
-package exercises.training_bfs.week1.day2;
-
-import java.util.Stack;
+package trainings.bfs.week1.day2.hw;
 
 public class HW_2 {
 
