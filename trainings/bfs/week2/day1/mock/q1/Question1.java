@@ -1,4 +1,4 @@
-package tmp.mock1.q1;
+package trainings.bfs.week2.day1.mock.q1;
 
 public class Question1 {
 

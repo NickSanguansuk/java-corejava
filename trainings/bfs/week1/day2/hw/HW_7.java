@@ -1,6 +1,6 @@
 package trainings.bfs.week1.day2.hw;
 
-public class HW_7a {
+public class HW_7 {
 
     void printNumberInWord(int number) {
         if (number == 1) {
@@ -28,7 +28,7 @@ public class HW_7a {
 
     public static void main(String[] args) {
 
-        HW_7a hw7 = new HW_7a();
+        HW_7 hw7 = new HW_7();
 
         int num1 = 7;
         hw7.printNumberInWord(num1);

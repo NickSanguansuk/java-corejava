@@ -1,7 +1,6 @@
-package tmp.mock1.q3;
+package trainings.bfs.week2.day1.mock.q3;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class Question3 {
 

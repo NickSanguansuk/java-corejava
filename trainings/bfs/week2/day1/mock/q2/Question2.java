@@ -1,4 +1,4 @@
-package tmp.mock1.q2;
+package trainings.bfs.week2.day1.mock.q2;
 
 import java.util.ArrayList;
 import java.util.List;

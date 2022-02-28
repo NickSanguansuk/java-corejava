@@ -8,7 +8,10 @@ public class MaxHeap {
     public static void main(String[] args) {
 
         MaxHeapComparator comparator = new MaxHeapComparator();
-        Queue<Integer> pq = new PriorityQueue<>(11, comparator);
+        //Queue<Integer> pq = new PriorityQueue<>(11, comparator);
+        Queue<Integer> pq = new PriorityQueue<>(11, (o1, o2) -> {
+            return o2 - o1;
+        });
 
         pq.offer(5);
         pq.offer(2);
@@ -20,7 +23,7 @@ public class MaxHeap {
         System.out.println(pq);
 
         Integer val = pq.poll();
-        while(val != null) {
+        while (val != null) {
             System.out.println(val);
             System.out.println(pq);
             val = pq.poll();
