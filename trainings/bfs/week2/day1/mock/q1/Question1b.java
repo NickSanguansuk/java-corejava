@@ -1,6 +1,6 @@
 package trainings.bfs.week2.day1.mock.q1;
 
-public class Question1B {
+public class Question1b {
 
     public int q1(ListNode node, ListNode node2) {
 
@@ -55,7 +55,7 @@ public class Question1B {
 
     public static void main(String[] args) {
 
-        Question1B question1b = new Question1B();
+        Question1b question1b = new Question1b();
 
         // 5237559
         ListNode l1a = new ListNode(5);

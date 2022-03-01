@@ -6,36 +6,35 @@ public class HW_1b {
 
     int mathCalculator(int[] numbers, String[] operators) {
 
-        Stack<Double> numsStack = new Stack<>();
-        Stack<String> opsStack = new Stack<>();
+        Stack<Object> stack = new Stack<>();
 
-        numsStack.push((double) numbers[0]);
+        stack.push((double)numbers[0]);
 
         for (int i = 0; i < operators.length; i++) {
             if (operators[i].equals("Mul") || operators[i].equals("Div")) {
                 if (operators[i].equals("Mul")) {
-                    numsStack.push(numsStack.pop() * numbers[i + 1]);
+                    stack.push(((double) stack.pop()) * numbers[i + 1]);
                 } else if (operators[i].equals("Div")) {
-                    numsStack.push(numsStack.pop() / numbers[i + 1]);
+                    stack.push(((double) stack.pop()) / numbers[i + 1]);
                 }
             } else {
-                numsStack.push((double) numbers[i + 1]);
-                opsStack.push(operators[i]);
+                stack.push(operators[i]);
+                stack.push((double)numbers[i + 1]);
             }
         }
 
-        Double result = numsStack.pop();
+        double result = (double) stack.pop();
 
-        while (numsStack.size() != 0) {
-            String op = opsStack.pop();
+        while (stack.size() != 0) {
+            String op = (String) stack.pop();
             if (op.equals("Add")) {
-                result = numsStack.pop() + result;
+                result = ((double) stack.pop()) + result;
             } else if (op.equals("Sub")) {
-                result = numsStack.pop() - result;
+                result = ((double) stack.pop()) - result;
             }
         }
 
-        return (int) ((double) result);
+        return (int) result;
     }
 
     public static void main(String[] args) {
