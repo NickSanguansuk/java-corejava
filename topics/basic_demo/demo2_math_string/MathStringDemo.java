@@ -1,6 +1,6 @@
 package topics.basic_demo.demo2_math_string;
 
-import org.apache.commons.lang3.RandomStringUtils;
+//import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -422,16 +422,16 @@ public class MathStringDemo {
 
             System.out.println("----------");
 
-            System.out.println("Generate random number length 5 ---> Apache Commons Lang API");
-            //http://commons.apache.org/
-            String randIntString = RandomStringUtils.randomNumeric(5);
-            System.out.println(randIntString);
-            int rand5 = Integer.parseInt(randIntString);
-            System.out.println(rand5);
-
-            System.out.println("Generate random String length 5 ---> Apache Commons Lang API");
-            String randStr1 = RandomStringUtils.randomAlphabetic(5);
-            System.out.println(randStr1);
+            //System.out.println("Generate random number length 5 ---> Apache Commons Lang API");
+            ////http://commons.apache.org/
+            //String randIntString = RandomStringUtils.randomNumeric(5);
+            //System.out.println(randIntString);
+            //int rand5 = Integer.parseInt(randIntString);
+            //System.out.println(rand5);
+            //
+            //System.out.println("Generate random String length 5 ---> Apache Commons Lang API");
+            //String randStr1 = RandomStringUtils.randomAlphabetic(5);
+            //System.out.println(randStr1);
 
         }
 

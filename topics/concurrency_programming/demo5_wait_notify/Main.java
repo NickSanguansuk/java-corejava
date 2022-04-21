@@ -26,6 +26,13 @@ public class Main {
         Thread t3 = new Thread(c2, "Deposit Thread 2");
         t3.start();
 
+        //try {
+        //	Thread.sleep(100);
+        //} catch (InterruptedException e) {
+        //	e.printStackTrace();
+        //}
+        //System.out.println(t1.getState());
+
         System.out.println("main is done");
     }
 }
