@@ -1,7 +1,7 @@
 package topics.class_demo.access_specifier_demo.package_2;
 
 // Class can be default or public
-public class publicClass {
+public class PublicClass {
     // Data
     // class-level variable (fields)
     private int num;

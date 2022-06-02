@@ -1,14 +1,14 @@
 package topics.class_demo.access_specifier_demo.package_1;
 
-import topics.class_demo.access_specifier_demo.package_2.publicClass;
+import topics.class_demo.access_specifier_demo.package_2.PublicClass;
 //import topics.class_demo.package_2.ClassTwo;
 
 public class MyMain {
 
     public static void main(String[] args) {
 
-        // instance of a class
-        publicClass classOne = new publicClass(); // ClassOne is public
+        // Instance of a class
+        PublicClass classOne = new PublicClass(); // ClassOne is public
         //ClassTwo classTwo = new ClassTwo(); // ClassTwo is default (not public)
 
         int result = classOne.addingNumber(3, 5);

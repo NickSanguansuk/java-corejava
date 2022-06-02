@@ -1,4 +1,4 @@
-package topics.concurrency_programming.demo2_synchronized;
+package topics.concurrency_programming.demo2_synchronized.demo1;
 
 public class SynchronizedExample1 extends Thread {
 

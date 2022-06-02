@@ -6,7 +6,8 @@ class Counter1 {
 
     public void increment() {
         for (int i = 0; i < 10000; i++) {
-            synchronized (this) {
+            synchronized (this) {               // Correct
+            //synchronized (Counter1.class) {   // Incorrect
                 value++;
             }
         }
